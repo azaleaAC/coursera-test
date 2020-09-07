@@ -1,1 +1,66 @@
+body{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size:14px;
+	margin:0px;
+}
 
+*{
+	box-sizing: border-box;
+}
+
+h1{
+	text-align: center;
+	font-size:175%;
+}
+
+p {
+	border: 1px solid black;
+	margin:0;
+	padding:0;
+}
+
+
+.Category
+{
+	float:left;
+	position:relative;
+	width:33%;
+}
+
+.CategoryTitle{
+	position: absolute;
+	top:0;
+	right:0;
+	font-size: 125%;
+	width:33%;
+	text-align: center;
+}
+
+.AboutItem{
+	background-color: #ADD8E6;
+	padding: 40px 20px 0px 20px;
+}
+
+#Div1Title{
+	background-color: #0000A0;
+		color: white;
+}
+
+#Div2Title{
+	background-color: #008000;
+		color: white;
+}
+
+#Div3Title{
+	background-color: #800080;
+		color: white;
+}
+
+#About1{
+}
+
+#About2{
+}
+
+#About3{
+}
