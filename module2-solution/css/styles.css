@@ -1,7 +1,7 @@
 body{
 	font-family: "Comic Sans MS", cursive, sans-serif;
-	font-size:14px;
-	margin:0px;
+	font-size:16px;
+	margin:20px;
 }
 
 *{
@@ -11,7 +11,9 @@ body{
 h1{
 	text-align: center;
 	font-size:175%;
+	margin:25px;
 }
+
 
 p {
 	border: 1px solid black;
@@ -20,11 +22,14 @@ p {
 }
 
 
-.Category
+.Container
 {
 	float:left;
+	padding:15px;
+}
+
+.Category{
 	position:relative;
-	width:33%;
 }
 
 .CategoryTitle{
@@ -38,7 +43,7 @@ p {
 
 .AboutItem{
 	background-color: #ADD8E6;
-	padding: 40px 20px 0px 20px;
+	padding: 35px 15px 0px 15px;
 }
 
 #Div1Title{
@@ -56,11 +61,48 @@ p {
 		color: white;
 }
 
-#About1{
+
+
+@media(min-width: 992px){
+
+	.Container{
+		width: 33%;
+	}
 }
 
-#About2{
+
+@media(min-width: 768px) and (max-width: 991px){
+	
+	body{
+		font-size: 18px;
+	}
+
+	.HalfSpan{
+		width:50%;
+	}
+
+	.WholeSpan{
+		width:100%;
+	}
+
+	#Div3Title{
+		width:16%;
+	}
 }
 
-#About3{
+
+
+@media(max-width: 767px){
+
+	body{
+		font-size: 20px;
+	}
+
+	.Container{
+		width: 100%;
+	}
+
 }
+
+
+
