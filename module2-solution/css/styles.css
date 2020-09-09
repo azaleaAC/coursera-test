@@ -11,7 +11,6 @@ body{
 h1{
 	text-align: center;
 	font-size:175%;
-	margin:25px;
 }
 
 
@@ -21,6 +20,10 @@ p {
 	padding:0;
 }
 
+
+section{
+	margin-top:40px;
+}
 
 .Container
 {
@@ -42,22 +45,22 @@ p {
 }
 
 .AboutItem{
-	background-color: #ADD8E6;
+	background-color: #FFFFBF;
 	padding: 35px 15px 0px 15px;
 }
 
 #Div1Title{
-	background-color: #0000A0;
+	background-color: #FFA500;
 		color: white;
 }
 
 #Div2Title{
-	background-color: #008000;
+	background-color: #FF0000;
 		color: white;
 }
 
 #Div3Title{
-	background-color: #800080;
+	background-color: #6A0DAD;
 		color: white;
 }
 
@@ -77,11 +80,11 @@ p {
 		font-size: 18px;
 	}
 
-	.HalfSpan{
+	.Md-HalfSpan{
 		width:50%;
 	}
 
-	.WholeSpan{
+	.Md-WholeSpan{
 		width:100%;
 	}
 
@@ -104,5 +107,6 @@ p {
 
 }
 
-
-
+.spacing{
+	clear:left;
+}
