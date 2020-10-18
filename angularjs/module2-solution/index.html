@@ -39,7 +39,7 @@
         Buy {{item.quantity}} {{item.name}}
       <button ng-click="BuyItem.moveItem($index);" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
-     <div class="emptyMessage">
+     <div ng-if="BuyItem.items.length==0" class="emptyMessage">
       <!--Everything is bought!-->
        {{BuyItem.errorMessage}}
       </div>
