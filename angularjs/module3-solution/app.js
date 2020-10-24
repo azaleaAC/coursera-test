@@ -68,7 +68,7 @@ function MenuSearchService($http){
 						};
 
 						foundItems.push(item);	
-						console.log(foundItem);			
+						console.log(foundItems);			
 					}
 				}
 			//}
