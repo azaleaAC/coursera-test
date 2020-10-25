@@ -9,15 +9,45 @@ angular.module('NarrowItDownApp',[])
 
 function foundItems(){
 	var ddo = {
+		templateUrl: 'listItems.html',
 		scope: {
 			list: '<foundItems',
 			onRemove: '&'
 		},
-		templateUrl: 'listItems.html'
+		controller: NarrowItDownController,
+		controllerAs: 'list',
+		bindToController: true,
+		link: NarrowDirectiveLink
 	};
 
 	return ddo;
 }
+
+
+function NarrowDirectiveLink(scope, element, attrs, controller){
+	scope.$watch('list.itemsInList()', function(validList){
+		if (validList === false){
+			displayWarning();
+		}
+		else{
+			hideWarning();
+		}
+		
+	})
+
+
+	function displayWarning(){
+		var warningElem = element.find("div.error");
+		warningElem.css('display','block');
+	}
+
+
+	function hideWarning(){
+		var warningElem = element.find("div.error");
+		warningElem.css('display','none');
+	}
+}
+
 
 NarrowItDownController.$inject=['MenuSearchService'];
 function NarrowItDownController(MenuSearchService){
@@ -26,7 +56,7 @@ function NarrowItDownController(MenuSearchService){
 
 	menu.searchTerm = "";
 
-	menu.message = "";
+	menu.message = "Nothing found";
 
 	var promise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
 	promise.then(function (response){
@@ -42,24 +72,11 @@ function NarrowItDownController(MenuSearchService){
 
 	menu.getItems = function(searchTerm){
 		MenuSearchService.getItems(searchTerm);
-		//menu.message = MenuSearchService.getMessage(searchTerm);	
-		if(menu.found.length === 0){
-			menu.message = "Nothing found";
-		}
-		else{
-			menu.message = "";
-		}	
 	};
 
-
-	/*menu.getMessage = function(){
-		if(menu.found.length === 0){
-			menu.message = "Nothing found";
-		}
-		else{
-			menu.message = "";
-		}
-	}*/
+	menu.itemsInList = function(searchTerm){
+		MenuSearchService.itemsInList(searchTerm);
+	}
 
 }
 
@@ -83,7 +100,7 @@ function MenuSearchService($http){
 		.then(function (result) {
 		    // process result and only keep items that match
 	    	var myresult = result.data.menu_items;
-	    	//console.log("length", myresult.length, "myresult[1].name",myresult[1].name)
+	    	console.log("length", myresult.length, "myresult[1].name",myresult[1].name)
 			for(var i=0; i<myresult.length; i++){
 
 				if ((myresult[i].name.toLowerCase().indexOf(searchTerm) !== -1) && 
@@ -99,7 +116,7 @@ function MenuSearchService($http){
 					foundItems.push(item);	
 				}
 			}
-		//console.log("first item in found items is ",foundItems[0].name, "and # of items is ", foundItems.length)
+		console.log("first item in found items is ",foundItems[0].name, "and # of items is ", foundItems.length)
 	   // return processed items
 			return foundItems;
 		})
@@ -111,7 +128,7 @@ function MenuSearchService($http){
 		//console.log("first item in found items is ",foundItems[0].name, "and has ", foundItems.length)
 	   // return processed items
 	    //return foundItems;
-	};
+	}
 
 
 	/*service.addItem = function(searchTerm, itemName){
@@ -126,26 +143,15 @@ function MenuSearchService($http){
 
 	service.removeItem = function(itemIndex){
 		foundItems.splice(itemIndex,1);
-	};
+	}
 
 	service.getItems = function(searchTerm){
-		service.getMatchedMenuItems(searchTerm)
-	};
-
-	service.getMessage = function(searchTerm){
-		
-		var message = "";
-
-		if((foundItems.length === 0) || (searchTerm === "")){
-			message = "Nothing found";
-		}
-		else{
-			message = "";
-		}
-
-		return message;
+		service.getMatchedMenuItems(searchTerm);
 	}
- 
+
+ 	service.itemsInList = function(){
+ 		return ((foundItems.length > 0) && (searchTerm !== ""));
+ 	}
 }
 
 })();
