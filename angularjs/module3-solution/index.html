@@ -3,7 +3,7 @@
   <head>
     <title>Narrow Down Your Menu Choice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
-    <script src="jquery-3.1.0.min.js"></script>
+   <!-- <script src="jquery-3.1.0.min.js"></script>-->
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
@@ -21,7 +21,7 @@
     </div>
 
     <!-- found-items should be implemented as a component -->
-    <found-items found-items="list" on-remove="list.removeItem(index)"></found-items>
+    <found-items found-items="list.found" on-remove="list.removeItem(index)"></found-items>
 
     <div class="error"><p>{{list.message}}</p></div>
   </div>

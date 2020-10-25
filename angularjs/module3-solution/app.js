@@ -17,14 +17,14 @@ function foundItems(){
 		controller: NarrowItDownController,
 		controllerAs: 'list',
 		bindToController: true,
-		link: NarrowDirectiveLink
+		//link: NarrowDirectiveLink
 	};
 
 	return ddo;
 }
 
 
-function NarrowDirectiveLink(scope, element, attrs, controller){
+/*function NarrowDirectiveLink(scope, element, attrs, controller){
 	scope.$watch('list.itemsInList()', function(validList){
 		console.log("running NarrowDirectiveLink");
 		if (validList === false){
@@ -47,7 +47,7 @@ function NarrowDirectiveLink(scope, element, attrs, controller){
 		var warningElem = element.find("div.error");
 		warningElem.css('display','none');
 	}
-}
+}*/
 
 
 NarrowItDownController.$inject=['MenuSearchService'];
@@ -92,25 +92,7 @@ function NarrowItDownController(MenuSearchService){
 			console.log("Error running MenuSearchService.getMatchedMenuItems.")
 		});
 
-	//var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
-	//console.log("just ran getMatchedMenuItems. response is :", response);
-
-		//MenuSearchService.itemsInList();
-		//MenuSearchService.getMessage();
-
-
-
 	};
-
-	/*menu.clickButton = function(searchTerm){
-		menu.getItems(searchTerm);
-
-	}*/
-
-	/*menu.itemsInList = function(){
-		//MenuSearchService.itemsInList();
-		MenuSearchService.getMessage();
-	}*/
 
 }
 
@@ -151,12 +133,6 @@ function MenuSearchService($http){
 					}
 				}
 			}
-				/*if(foundItems.length > 0){
-					console.log("first item in found items is ",foundItems[0].name, "and # of items is ", foundItems.length);
-				}
-				else{
-					console.log(foundItems.length, " items found")
-				}*/
 			
 
 	   // return processed items
@@ -179,26 +155,6 @@ function MenuSearchService($http){
 	service.getItems = function(searchTerm){
 		service.getMatchedMenuItems(searchTerm);
 	}
-
-
-	/*service.getMessage = function(){
-
-		console.log("running service.getMessage")
-		var message = "";
-
-		console.log("length = ",foundItems.length)
-		if (foundItems.length === 0){
-			message = "Nothing found";
-		}
-
-		return message;
-	}*/
- 	
-
- 	/*service.itemsInList = function(){
- 		console.log("calling service.itemsInList. # of items n foundItems is",foundItems.length);
- 		return (foundItems.length > 0);
- 	}*/
 }
 
 })();
