@@ -32,14 +32,6 @@ function NarrowItDownController(MenuSearchService){
 	menu.searchTerm = "";
 	menu.message = "";
 
-	/*var promise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
-	promise.then(function (response){
-		menu.found = response;	
-	},
-	function(response){
-		console.log("Error running MenuSearchService.getMatchedMenuItems.")
-	});*/
-
 
 	menu.removeItem = function(itemIndex){
 		MenuSearchService.removeItem(itemIndex);
@@ -72,11 +64,11 @@ MenuSearchService.$inject=['$http'];
 function MenuSearchService($http){
 
 	var service = this;
-
-	service.getMatchedMenuItems = function(searchTerm){
 	
 		//List of filtered menu items
 		var foundItems = [];
+
+	service.getMatchedMenuItems = function(searchTerm){
 
 		return $http({
 			method: "GET",
