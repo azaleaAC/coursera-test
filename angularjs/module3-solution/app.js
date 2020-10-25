@@ -11,7 +11,7 @@ function foundItems(){
 	var ddo = {
 		templateUrl: 'listItems.html',
 		scope: {
-			foundItems: '<',
+			items: '<',
 			onRemove: '&'
 		},
 		controller: NarrowItDownController,
@@ -57,7 +57,6 @@ function NarrowItDownController(MenuSearchService){
 
 	menu.searchTerm = "";
 	menu.message = "";
-	//menu.found = [{name:"nothing"}];
 
 	/*var promise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
 	promise.then(function (response){
@@ -75,12 +74,10 @@ function NarrowItDownController(MenuSearchService){
 
 	menu.getItems = function(searchTerm){
 		
-		console.log("calling menu.getItems");
 		var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
 		promise.then(function (response){
 			menu.found = response;	
 
-			console.log("length is ", menu.found.length)
 			if (menu.found.length === 0){
 				menu.message = "Nothing found";
 			}
@@ -106,7 +103,6 @@ function MenuSearchService($http){
 	
 		//List of filtered menu items
 		var foundItems = [];
-		//console.log("foundItems has ",foundItems.length, " items");
 
 		return $http({
 			method: "GET",
@@ -115,7 +111,6 @@ function MenuSearchService($http){
 		.then(function (result) {
 		    // process result and only keep items that match
 	    	var myresult = result.data.menu_items;
-	    	//console.log("length", myresult.length, "myresult[1].name",myresult[1].name)
 
 	    	if (searchTerm !== ""){
 				for(var i=0; i<myresult.length; i++){
