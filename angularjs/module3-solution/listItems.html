@@ -1,8 +1,10 @@
-<ol>
-	<li>Item 1</li>
-	<li>{{list.found[0]}}</li>
-	<li ng-repeat="item in list.found">
-		{{item.name}}, {{item.short_name}}, {{item.description}} 
-		<button ng-click="list.onRemove({index:$index});">Don't want this one!</button>
-	</li>
-</ol>
+<div>
+	<ol>
+		<li>Item 1</li>
+		<li>{{found[0]}}</li>
+		<li ng-repeat="item in list.found">
+			{{item.name}}, {{item.short_name}}, {{item.description}} 
+			<button ng-click="list.onRemove({index:$index});">Don't want this one!</button>
+		</li>
+	</ol>
+</div>
