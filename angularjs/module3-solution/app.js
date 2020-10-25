@@ -66,12 +66,12 @@ function MenuSearchService($http){
 	var service = this;
 
 	//List of filtered menu items
-	var foundItems = [];
+	var found = [];
 
 	service.getMatchedMenuItems = function(searchTerm){
 
 		//Clear out every time button clicked
-		foundItems = [];
+		found = [];
 
 		return $http({
 			method: "GET",
@@ -92,14 +92,14 @@ function MenuSearchService($http){
 							description: myresult[i].description
 						};
 
-						foundItems.push(item);	
+						found.push(item);	
 					}
 				}
 			}
 			
 
 	   		// return processed items
-			return foundItems;
+			return found;
 
 		})
 		.catch(function (errorResponse){
@@ -111,7 +111,7 @@ function MenuSearchService($http){
 
 
 	service.removeItem = function(itemIndex){
-		foundItems.splice(itemIndex,1);
+		found.splice(itemIndex,1);
 	}
 
 

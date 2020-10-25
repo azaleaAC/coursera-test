@@ -1,8 +1,9 @@
 <div class="clear">
-	<ol>
+	<ul>
 		<li ng-repeat="item in list.items">
 			{{item.name}}, {{item.short_name}}, {{item.description}} 
 			<button ng-click="list.onRemove({index:$index});">Don't want this one!</button>
 		</li>
-	</ol>
+	</ul>
+	<div class="error"><p>{{list.message}}</p></div>
 </div>
