@@ -10,7 +10,7 @@ angular.module('NarrowItDownApp',[])
 function foundItems(){
 	var ddo = {
 		scope: {
-			list: '=foundItems',
+			list: '<foundItems',
 			onRemove: '&'
 		},
 		templateUrl: 'listItems.html'
@@ -25,11 +25,12 @@ function NarrowItDownController(MenuSearchService){
 	var menu = this;
 
 	menu.searchTerm = "";
-	//menu.searchTerm = MenuSearchService.searchItem;
+
+	menu.message = "";
 
 	var promise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
 	promise.then(function (response){
-		menu.found = response.data;
+		menu.found = response;
 	},
 	function(response){
 		console.log("Error running MenuSearchService.getMatchedMenuItems.")
@@ -38,6 +39,27 @@ function NarrowItDownController(MenuSearchService){
 	menu.removeItem = function(itemIndex){
 		MenuSearchService.removeItem(itemIndex);
 	};
+
+	menu.getItems = function(searchTerm){
+		MenuSearchService.getItems(searchTerm);
+		//menu.message = MenuSearchService.getMessage(searchTerm);	
+		if(menu.found.length === 0){
+			menu.message = "Nothing found";
+		}
+		else{
+			menu.message = "";
+		}	
+	};
+
+
+	/*menu.getMessage = function(){
+		if(menu.found.length === 0){
+			menu.message = "Nothing found";
+		}
+		else{
+			menu.message = "";
+		}
+	}*/
 
 }
 
@@ -61,20 +83,23 @@ function MenuSearchService($http){
 		.then(function (result) {
 		    // process result and only keep items that match
 	    	var myresult = result.data.menu_items;
-	    	console.log("length", myresult.length, "myresult[1].name",myresult[1].name)
+	    	//console.log("length", myresult.length, "myresult[1].name",myresult[1].name)
 			for(var i=0; i<myresult.length; i++){
 
-				if (myresult[i].name.toLowerCase().indexOf(searchTerm) !== -1){
+				if ((myresult[i].name.toLowerCase().indexOf(searchTerm) !== -1) && 
+					(searchTerm !== "")){
 					
 					console.log('found one that matches ',searchTerm)
 					var item = {
-						name: myresult[i].name
+						name: myresult[i].name,
+						short_name: myresult[i].short_name,
+						description: myresult[i].description
 					};
 
 					foundItems.push(item);	
 				}
 			}
-		console.log("first item in found items is ",foundItems[0].name, "and # of items is ", foundItems.length)
+		//console.log("first item in found items is ",foundItems[0].name, "and # of items is ", foundItems.length)
 	   // return processed items
 			return foundItems;
 		})
@@ -99,9 +124,27 @@ function MenuSearchService($http){
 		}*/
 	//}
 
-	service.removeItem = function(){
-		items.splice(itemIndex,1);
+	service.removeItem = function(itemIndex){
+		foundItems.splice(itemIndex,1);
 	};
+
+	service.getItems = function(searchTerm){
+		service.getMatchedMenuItems(searchTerm)
+	};
+
+	service.getMessage = function(searchTerm){
+		
+		var message = "";
+
+		if((foundItems.length === 0) || (searchTerm === "")){
+			message = "Nothing found";
+		}
+		else{
+			message = "";
+		}
+
+		return message;
+	}
  
 }
 
