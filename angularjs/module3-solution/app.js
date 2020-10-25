@@ -4,14 +4,14 @@
 angular.module('NarrowItDownApp',[])
 .controller('NarrowItDownController',NarrowItDownController)
 .service('MenuSearchService',MenuSearchService)
-.directive('myItems',myItems);	
+.directive('foundItems',foundItems);	
 
 
-function myItems(){
+function foundItems(){
 	var ddo = {
 		templateUrl: 'listItems.html',
 		scope: {
-			items: '<',
+			foundItems: '<',
 			onRemove: '&'
 		},
 		controller: NarrowItDownController,
