@@ -52,7 +52,7 @@ function NarrowItDownController(MenuSearchService){
 			}
 		},
 		function(response){
-			console.log("Error running MenuSearchService.getMatchedMenuItems.")
+			console.log("Error occurred.")
 		});
 
 	};
@@ -64,11 +64,14 @@ MenuSearchService.$inject=['$http'];
 function MenuSearchService($http){
 
 	var service = this;
-	
-		//List of filtered menu items
-		var foundItems = [];
+
+	//List of filtered menu items
+	var foundItems = [];
 
 	service.getMatchedMenuItems = function(searchTerm){
+
+		//Clear out every time button clicked
+		foundItems = [];
 
 		return $http({
 			method: "GET",
@@ -83,7 +86,6 @@ function MenuSearchService($http){
 
 					if (myresult[i].name.toLowerCase().indexOf(searchTerm) !== -1) {
 						
-						console.log('found one that matches ',searchTerm)
 						var item = {
 							name: myresult[i].name,
 							short_name: myresult[i].short_name,
@@ -96,7 +98,7 @@ function MenuSearchService($http){
 			}
 			
 
-	   // return processed items
+	   		// return processed items
 			return foundItems;
 
 		})
