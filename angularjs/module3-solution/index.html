@@ -21,9 +21,9 @@
     </div>
 
 <!--temp-->
-<div>
+<div class="clear">
   <ol>
-  <li ng-repeat="item in list.found"></li></ol>
+  <li ng-repeat="item in list.found">{{item.name}}</li></ol>
   </div>
     <!-- found-items should be implemented as a component -->
     <found-items items="list.found" on-remove="list.removeItem(index)"></found-items>

@@ -17,37 +17,11 @@ function foundItems(){
 		controller: NarrowItDownController,
 		controllerAs: 'list',
 		bindToController: true
-		//link: NarrowDirectiveLink
 	};
 
 	return ddo;
 }
 
-
-/*function NarrowDirectiveLink(scope, element, attrs, controller){
-	scope.$watch('list.itemsInList()', function(validList){
-		console.log("running NarrowDirectiveLink");
-		if (validList === false){
-			displayWarning();
-		}
-		else{
-			hideWarning();
-		}
-		
-	})
-
-
-	function displayWarning(){
-		var warningElem = element.find("div.error");
-		warningElem.css('display','block');
-	}
-
-
-	function hideWarning(){
-		var warningElem = element.find("div.error");
-		warningElem.css('display','none');
-	}
-}*/
 
 
 NarrowItDownController.$inject=['MenuSearchService'];
