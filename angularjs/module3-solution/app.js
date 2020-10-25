@@ -16,7 +16,7 @@ function foundItems(){
 		},
 		controller: NarrowItDownController,
 		controllerAs: 'list',
-		bindToController: true,
+		bindToController: true
 		//link: NarrowDirectiveLink
 	};
 
