@@ -18,7 +18,7 @@ function CategoriesController(myCategories){
 	//temp - all below
 	console.log("this is running!");
 
-	$ctrl.$onInit = function(){
+	categories.$onInit = function(){
 		var cancel = $rootScope.$on('$stateChangeError',
 			function(event, toState, toParams, fromState, fromParams, error){
 				console.log("event: ", event, ", toState: ", toState, ", toParams: ",
@@ -27,7 +27,7 @@ function CategoriesController(myCategories){
 			});
 	};
 
-	$ctrl.$onDestroy = function(){
+	categories.$onDestroy = function(){
 		cancel();
 	}
 }
