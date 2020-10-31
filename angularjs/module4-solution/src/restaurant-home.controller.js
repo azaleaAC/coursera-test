@@ -11,7 +11,7 @@ function HomeController($rootScope){
 
 	
 	//temp
-	console.log("this is running!");
+	//console.log("this is running!");
 
 	$ctrl.$onInit = function(){
 		var cancel = $rootScope.$on('$stateChangeError',
