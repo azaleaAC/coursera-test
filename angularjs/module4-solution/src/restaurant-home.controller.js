@@ -7,7 +7,11 @@ angular.module('RestaurantMenu')
 HomeController.$inject = ['$rootScope'];
 function HomeController($rootScope){
 
-	var home = this;
+	var $ctrl = this;
+
+	
+	//temp
+	console.log("this is running!");
 
 	$ctrl.$onInit = function(){
 		var cancel = $rootScope.$on('$stateChangeError',
