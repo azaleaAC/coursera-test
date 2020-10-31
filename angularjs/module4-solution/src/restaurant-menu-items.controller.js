@@ -4,7 +4,7 @@
 angular.module('RestaurantMenu')
 .controller('MenuController', MenuController);
 
-MenuController.$inject['items'];
+MenuController.$inject = ['items'];
 function MenuController(items){
 
 	var menu = this;

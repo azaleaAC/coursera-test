@@ -4,7 +4,7 @@
 angular.module('RestaurantMenu')
 .controller('HomeController', HomeController);
 
-HomeController.$inject['$rootScope'];
+HomeController.$inject = ['$rootScope'];
 function HomeController($rootScope){
 
 	var home = this;
