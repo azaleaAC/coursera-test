@@ -27,7 +27,7 @@ function CategoriesService($http){
 	    	var myresult = result.data;
 
 	    	//temp
-	    	console.log('myresult is ', myresult);
+	    	//console.log('myresult is ', myresult);
 
 	    	//if (searchTerm !== ""){
 				for(var i=0; i<myresult.length; i++){
@@ -43,7 +43,7 @@ function CategoriesService($http){
 						categoriesList.push(category);	
 
 						//temp
-						console.log(category.name);
+						//console.log(category.name);
 					//}
 				}
 			//}
