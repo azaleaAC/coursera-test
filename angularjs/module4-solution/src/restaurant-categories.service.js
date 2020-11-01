@@ -24,29 +24,16 @@ function CategoriesService($http){
 		    // process result and only keep items that match
 	    	var myresult = result.data;
 
-	    	//temp
-	    	//console.log('myresult is ', myresult);
+			for(var i=0; i<myresult.length; i++){
 
-	    	//if (searchTerm !== ""){
-				for(var i=0; i<myresult.length; i++){
+				var category = {
+					short_name: myresult[i].short_name,
+					name: myresult[i].name,
+				};
 
-					//if (myresult[i].name.toLowerCase().indexOf(searchTerm) !== -1) {
-						
-						var category = {
-							short_name: myresult[i].short_name,
-							name: myresult[i].name,
-//							description: myresult[i].description
-						};
-
-						categoriesList.push(category);	
-
-						//temp
-						console.log(category.name);
-					//}
-				}
-			//}
-			
-
+				categoriesList.push(category);	
+			}
+		
 	   		// return processed items
 			return categoriesList;
 

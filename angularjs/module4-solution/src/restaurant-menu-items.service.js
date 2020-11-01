@@ -16,6 +16,8 @@ function MenuSearchService($http){
 		//Clear out every time function called
 		var found = [];
 
+		console.log('search term is ',searchTerm);
+
 		return $http({
 			method: "GET",
 			url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
@@ -27,7 +29,7 @@ function MenuSearchService($http){
 	    	if (searchTerm !== ""){
 				for(var i=0; i<myresult.length; i++){
 
-					if (myresult[i].short_name.toLowerCase().indexOf(searchTerm) !== -1) {
+					if (searchTerm.indexOf(myresult[i].short_name) !== -1) {
 						
 						var item = {
 							name: myresult[i].name,

@@ -10,12 +10,6 @@ function CategoriesController(myCategories, $rootScope){
 	var categories = this;
 	categories.items = myCategories;
 	
-	//temp
-	console.log("I am in the Categories controller.  'myCategories' =", categories.items)
-
-	//categories.short_name = myCategories.short_name;
-	//categories.name = myCategories.name;
-
 
 
 	var cancellers = [];
