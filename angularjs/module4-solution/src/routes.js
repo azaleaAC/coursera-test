@@ -17,7 +17,6 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 	.state('home',{
 		url:'/',
 		templateUrl: 'src/templates/home.template.html',
-		//template: '<a ui-sref="categories">See the Categories for our Menu Items!</a>',
 		controller: 'HomeController as home'
 	})
 
