@@ -16,8 +16,8 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 	//Home Page
 	.state('home',{
 		url:'/',
-		//templateUrl: 'src/templates/home.template.html',
-		template: '<a ui-sref="categories">See the Categories for our Menu Items!</a>',
+		templateUrl: 'src/templates/home.template.html',
+		//template: '<a ui-sref="categories">See the Categories for our Menu Items!</a>',
 		controller: 'HomeController as home'
 	})
 
@@ -25,7 +25,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 	//Categories
 	.state('categories',{
 		url:'categories',
-		templateUrl: 'src/templates/categories.template.html',
+		templateUrl: 'src/templates/categories-view.template.html',
 		controller: 'CategoriesController as categories',
 		resolve:{
 			myCategories: ['CategoriesService', function(CategoriesService){
