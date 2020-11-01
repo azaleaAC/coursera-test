@@ -29,7 +29,7 @@ function MenuSearchService($http){
 	    	if (searchTerm !== ""){
 				for(var i=0; i<myresult.length; i++){
 
-					if (searchTerm.indexOf(myresult[i].short_name) !== -1) {
+					if (myresult[i].short_name.indexOf(searchTerm) !== -1) {
 						
 						var item = {
 							name: myresult[i].name,
