@@ -1,7 +1,7 @@
 (function (){
 'use strict';
 
-angular.module('RestaurantMenu')
+angular.module('MenuApp')
 .service('MenuSearchService',MenuSearchService);
 
 
@@ -15,8 +15,6 @@ function MenuSearchService($http){
 
 		//Clear out every time function called
 		var found = [];
-
-		console.log('search term is ',searchTerm);
 
 		return $http({
 			method: "GET",

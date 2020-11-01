@@ -1,7 +1,7 @@
 (function (){
 'use strict';
 
-angular.module('RestaurantMenu')
+angular.module('MenuApp')
 .component('menuView',{
 	templateUrl:'src/templates/menu-view.template.html',
 	bindings:{

@@ -1,7 +1,7 @@
 (function (){
 'use strict';
 
-angular.module('RestaurantMenu')
+angular.module('MenuApp')
 .service('CategoriesService',CategoriesService);
 
 

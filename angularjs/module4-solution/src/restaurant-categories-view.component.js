@@ -1,7 +1,7 @@
 (function (){
 'use strict';
 
-angular.module('RestaurantMenu')
+angular.module('MenuApp')
 .component('categoryView',{
 	templateUrl:'src/templates/categories-items.template.html',
 	bindings:{
