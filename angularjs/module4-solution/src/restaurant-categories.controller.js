@@ -17,25 +17,41 @@ function CategoriesController(myCategories, $rootScope){
 
 	//temp - all below
 	console.log("this is running!");
+	var cancellers = [];
 
 	categories.$onInit = function(){
-		var cancel = $rootScope.$on('$stateChangeError',
+
+		var cancel = $rootScope.$on('$stateChangeStart',
+			function(event, toState, toParams, fromState, fromParams, options){
+				console.logn('stateChangeStart!');
+			})
+			cancellers.push(cancel);
+
+
+		 cancel = $rootScope.$on('$stateChangeSuccess',
+			function(event, toState, toParams, fromState, fromParams){
+				console.log("stateChangeSuccess!")
+
+			})
+				cancellers.push(cancel);
+
+
+		 cancel = $rootScope.$on('$stateChangeError',
 			function(event, toState, toParams, fromState, fromParams, error){
 				console.log("event: ", event, ", toState: ", toState, ", toParams: ",
 					toParams, ", fromState: ", fromState, ", fromParams: ", fromParams,
 					"error: ", error);
 			});
 
-		var cancel2 = $rootScope.$on('stateChangeSuccess',
-			function(event, toState, toParams, fromState, fromParams){
-				console.log("stateChangeSuccess!")
-			})
+			cancellers.push(cancel);
 	};
 
 	categories.$onDestroy = function(){
-		cancel();
-	}
-}
+		cancellers.forEach(function (item){
+			item();
+		}); 
+	};
+};
 
 
 })();
