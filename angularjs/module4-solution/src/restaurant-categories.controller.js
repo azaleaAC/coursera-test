@@ -25,6 +25,11 @@ function CategoriesController(myCategories, $rootScope){
 					toParams, ", fromState: ", fromState, ", fromParams: ", fromParams,
 					"error: ", error);
 			});
+
+		var cancel2 = $rootScope.$on('stateChangeSuccess',
+			function(event, toState, toParams, fromState, fromParams){
+				console.log("stateChangeSuccess!")
+			})
 	};
 
 	categories.$onDestroy = function(){
