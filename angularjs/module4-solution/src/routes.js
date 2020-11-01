@@ -44,7 +44,6 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 			items: ['$stateParams','MenuSearchService', 
 				function($stateParams, MenuSearchService){
 				return MenuSearchService.getItems($stateParams.shortname);
-				});
 			}]
 		}
 	})
