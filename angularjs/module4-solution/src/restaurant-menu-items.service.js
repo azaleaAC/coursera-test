@@ -36,6 +36,7 @@ function MenuSearchService($http){
 						};
 
 						found.push(item);	
+						console.log("item added: ", item[i].name)
 					}
 				}
 			}
