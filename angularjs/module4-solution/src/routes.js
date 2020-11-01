@@ -24,7 +24,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 
 	//Categories
 	.state('categories',{
-		url:'categories',
+		url:'/categories',
 		templateUrl: 'src/templates/categories-view.template.html',
 		controller: 'CategoriesController as categories',
 		resolve:{
@@ -37,7 +37,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 
 	//Menu Items
 	.state('menu',{
-		url:'menu-items',
+		url:'/menu-items',
 		templateUrl: 'src/templates/menu-items.template.html',
 		controller: 'MenuController as menu',
 		resolve:{
