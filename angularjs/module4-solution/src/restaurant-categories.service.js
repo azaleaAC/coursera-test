@@ -43,7 +43,7 @@ function CategoriesService($http){
 						categoriesList.push(category);	
 
 						//temp
-						//console.log(category.name);
+						console.log(category.name);
 					//}
 				}
 			//}

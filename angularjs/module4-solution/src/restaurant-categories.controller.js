@@ -8,15 +8,16 @@ CategoriesController.$inject = ['myCategories','$rootScope'];
 function CategoriesController(myCategories, $rootScope){
 
 	var categories = this;
-	//categories.items = [];
+	categories.items = [];
+	
+	//temp
+	console.log("I am in the Categories controller.  'myCategories' =", myCategories)
 
-	categories.short_name = myCategories.short_name;
-	categories.name = myCategories.name;
+	//categories.short_name = myCategories.short_name;
+	//categories.name = myCategories.name;
 
 
 
-	//temp - all below
-	console.log("this is running!");
 	var cancellers = [];
 
 	categories.$onInit = function(){
