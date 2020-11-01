@@ -3,7 +3,7 @@
 
 angular.module('RestaurantMenu')
 .component('categoryItems',{
-	templateUrl:'src/templates/categories.template.html',
+	templateUrl:'src/templates/category-items.template.html',
 	bindings:{
 		items: '<'
 	}

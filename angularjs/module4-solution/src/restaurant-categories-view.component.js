@@ -2,8 +2,8 @@
 'use strict';
 
 angular.module('RestaurantMenu')
-.component('categoryItems',{
-	templateUrl:'src/templates/categories.template.html',
+.component('categoryView',{
+	templateUrl:'src/templates/categories-items.template.html',
 	bindings:{
 		items: '<'
 	}
