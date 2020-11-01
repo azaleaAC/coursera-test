@@ -1,5 +1,7 @@
 <ul>
-	<li ng-repeat="item in $ctrl.items">
+	<li>1 - {{menu.items[0].name}}</li>
+	<li>2 - {{$ctrl.items[0].name}}
+	<li ng-repeat="item in menu.items">
 		<span class="menuname"> {{item.name}} - </span>
 		<span class="menudesc">{{item.description}} </span>
 	</li>

@@ -10,13 +10,11 @@ function CategoriesService($http){
 
 	var service = this;
 
-	//List of filtered menu items
-	var categoriesList = [];
 
 	service.getCategories = function(){
 
-		//Clear out every time button clicked
-		//found = [];
+		//Clear out every time function called
+		var categoriesList = [];
 
 		return $http({
 			method: "GET",
@@ -60,15 +58,6 @@ function CategoriesService($http){
 
 	}
 
-
-	/*service.removeItem = function(itemIndex){
-		found.splice(itemIndex,1);
-	}
-
-
-	service.getItems = function(searchTerm){
-		service.getMatchedMenuItems(searchTerm);
-	}*/
 }
 
 
