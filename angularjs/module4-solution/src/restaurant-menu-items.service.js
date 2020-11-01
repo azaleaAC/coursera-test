@@ -29,7 +29,7 @@ function MenuSearchService($http){
 	    	if (searchTerm !== ""){
 				for(var i=0; i<myresult.length; i++){
 
-					if (myresult[i].name.toLowerCase().indexOf(searchTerm) !== -1) {
+					if (myresult[i].short_name.toLowerCase().indexOf(searchTerm) !== -1) {
 						
 						var item = {
 							name: myresult[i].name,
@@ -48,7 +48,7 @@ function MenuSearchService($http){
 
 		})
 		.catch(function (errorResponse){
-			console.log("Something went wrong inside getMatchedMenuItems function!");
+			console.log("Something went wrong with getting menu items!");
 
 		});
 

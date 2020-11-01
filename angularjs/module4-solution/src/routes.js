@@ -36,13 +36,15 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 
 
 	//Menu Items
-	.state('menu',{
-		url:'/menu-items',
+	.state('items',{
+		url:'/menu-items/{shortname}',
 		templateUrl: 'src/templates/menu-items.template.html',
 		controller: 'MenuController as menu',
 		resolve:{
-			items: ['MenuSearchService', function(MenuSearchService){
-				return MenuSearchService.getItems();
+			items: ['$stateParams','MenuSearchService', 
+				function($stateParams, MenuSearchService){
+				return MenuSearchService.getItems($stateParams.shortname);
+				});
 			}]
 		}
 	})

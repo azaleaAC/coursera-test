@@ -1,7 +1,5 @@
 <ul>
-	<li>Updated 7</li>
-	<li>{{$ctrl.items[0].name}}
-	<li ng-repeat="item in $ctrl.items">
+	<li ng-repeat="item in $ctrl.items" ui-sref="items({shortname:$ctrl.items.short_name})">
 		{{item.short_name}} - {{item.name}}
 	</li>
 </ul>

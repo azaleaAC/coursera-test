@@ -8,7 +8,7 @@ MenuController.$inject = ['items'];
 function MenuController(items){
 
 	var menu = this;
-	//menu.items = [];
+	menu.items = items;
 
 	//menu.name = menuItems.name;
 	//menu.short_name = menuItems.name;
