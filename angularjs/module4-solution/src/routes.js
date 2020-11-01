@@ -38,7 +38,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 	//Menu Items
 	.state('items',{
 		url:'/menu-items/{shortname}',
-		templateUrl: 'src/templates/menu-items.template.html',
+		templateUrl: 'src/templates/menu-view.template.html',
 		controller: 'MenuController as menu',
 		resolve:{
 			items: ['$stateParams','MenuSearchService', 

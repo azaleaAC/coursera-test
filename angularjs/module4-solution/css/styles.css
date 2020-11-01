@@ -1,0 +1,14 @@
+.menuname{
+	font-weight: bold;
+}
+
+.menudesc{
+	font-style: italic;
+}
+
+li[ui-sref]: hover{
+	display: inline-block;
+	cursor: pointer;
+	font-weight: bold;
+	color: red;
+}
