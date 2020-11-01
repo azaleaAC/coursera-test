@@ -10,9 +10,9 @@ function MenuController(items){
 	var menu = this;
 	//menu.items = [];
 
-	menu.name = menuItems.name;
-	menu.short_name = menuItems.name;
-	menu.description = menuItems.description;
+	//menu.name = menuItems.name;
+	//menu.short_name = menuItems.name;
+	//menu.description = menuItems.description;
 }
 
 
