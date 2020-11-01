@@ -23,7 +23,7 @@ function CategoriesController(myCategories, $rootScope){
 
 		var cancel = $rootScope.$on('$stateChangeStart',
 			function(event, toState, toParams, fromState, fromParams, options){
-				console.logn('stateChangeStart!');
+				console.log('stateChangeStart!');
 			})
 			cancellers.push(cancel);
 
