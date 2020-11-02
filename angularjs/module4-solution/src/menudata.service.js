@@ -59,13 +59,10 @@ function MenuDataService($http){
 		})
 		.then(function (result) {
 
-			//temp
-			console.log("the result in the then is", result.data);
-
 		    // process result and only keep items that match
 	    	var myresult = result.data.menu_items;
 
-	    	console.log("my result is ",myresult)
+	    	console.log("my first result is ",result.data)
 
 	    	if (categoryShortName !== ""){
 				for(var i=0; i<myresult.length; i++){
