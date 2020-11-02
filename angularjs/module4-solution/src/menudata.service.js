@@ -46,8 +46,7 @@ service.getAllCategories = function(){
 	}
 
 
-//getItemsForCategory(categoryShortName)
-	service.getItemsForCategory = function(categoryShortName){
+	service.getMatchedMenuItems = function(categoryShortName){
 
 		//Clear out every time function called
 		var found = [];
@@ -95,7 +94,7 @@ service.getAllCategories = function(){
 	}
 
 
-	service.getItems = function(categoryShortName){
+	service.getItemsforCategory = function(categoryShortName){
 		service.getMatchedMenuItems(categoryShortName);
 	}
 }
