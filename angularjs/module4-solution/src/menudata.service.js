@@ -50,7 +50,6 @@ function MenuDataService($http){
 
 		//Clear out every time function called
 		var found = [];
-		console.log("categoryShortName is ",categoryShortName)
 
 		return $http({
 			method: "GET",
@@ -62,12 +61,9 @@ function MenuDataService($http){
 
 	    	var myresult = result.data.menu_items;
 
-	    	console.log("my first result is ",result.data)
-
 	    	if (categoryShortName !== ""){
 				for(var i=0; i<myresult.length; i++){
 
-					console.log("Does ",myresult[i].short_name," have an index of for ",categoryShortName,"?");
 					if (myresult[i].short_name.indexOf(categoryShortName) !== -1) {
 						
 						var item = {
@@ -77,7 +73,6 @@ function MenuDataService($http){
 						};
 
 						found.push(item);	
-						console.log("item added: ", item.name)
 					}
 				}
 			}
@@ -94,10 +89,6 @@ function MenuDataService($http){
 
 	}
 
-
-	/*service.getItemsforCategory = function(categoryShortName){
-		service.getMatchedMenuItems(categoryShortName);
-	}*/
 }
 
 
