@@ -6,7 +6,7 @@
 	font-style: italic;
 }
 
-.ui-sref li:hover{
+li[ui-sref]:hover {
 	display: inline-block;
 	cursor: pointer;
 	font-weight: bold;
