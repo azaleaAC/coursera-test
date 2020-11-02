@@ -62,9 +62,12 @@ service.getAllCategories = function(){
 		    // process result and only keep items that match
 	    	var myresult = result.data.menu_items;
 
+	    	console.log("my result is ",myresult)
+
 	    	if (categoryShortName !== ""){
 				for(var i=0; i<myresult.length; i++){
 
+					console.log("Does ",myresult[i].short_name," have an index of for ",categoryShortName,"?");
 					if (myresult[i].short_name.indexOf(categoryShortName) !== -1) {
 						
 						var item = {
