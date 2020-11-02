@@ -60,8 +60,8 @@ function MenuDataService($http){
 		.then(function (result) {
 
 			//temp
-			console.log("the result in the then is", result);
-			
+			console.log("the result in the then is", result.data);
+
 		    // process result and only keep items that match
 	    	var myresult = result.data.menu_items;
 
