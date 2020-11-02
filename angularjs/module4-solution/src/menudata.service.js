@@ -11,7 +11,7 @@ function MenuDataService($http){
 	var service = this;
 
 
-service.getAllCategories = function(){
+	service.getAllCategories = function(){
 
 		//Clear out every time function called
 		var categoriesList = [];
@@ -46,7 +46,7 @@ service.getAllCategories = function(){
 	}
 
 
-	service.getMatchedMenuItems = function(categoryShortName){
+	service.getItemsForCategory = function(categoryShortName){
 
 		//Clear out every time function called
 		var found = [];
@@ -94,9 +94,9 @@ service.getAllCategories = function(){
 	}
 
 
-	service.getItemsforCategory = function(categoryShortName){
+	/*service.getItemsforCategory = function(categoryShortName){
 		service.getMatchedMenuItems(categoryShortName);
-	}
+	}*/
 }
 
 
