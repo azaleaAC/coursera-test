@@ -7,7 +7,6 @@ angular.module('MenuApp')
 RoutesConfig.$inject = ['$stateProvider','$urlRouterProvider'];
 function RoutesConfig($stateProvider,$urlRouterProvider){
 
-console.log("i'm in routes.js")
 	//Redirect to home page if no other URL matches
 	$urlRouterProvider.otherwise('/');
 
@@ -48,6 +47,9 @@ console.log("i'm in routes.js")
 			}]
 		}
 	})
+
+	console.log("i'm in routes.js")
+
 }
 
 
