@@ -54,12 +54,12 @@ function MenuDataService($http){
 
 		return $http({
 			method: "GET",
-			url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
-			//params:{category:"categoryShortName"}
+			url: ("https://davids-restaurant.herokuapp.com/menu_items.json"),
+			params:{category:categoryShortName}
 		})
 		.then(function (result) {
-
 		    // process result and only keep items that match
+
 	    	var myresult = result.data.menu_items;
 
 	    	console.log("my first result is ",result.data)
