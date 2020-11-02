@@ -40,8 +40,8 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 		templateUrl: 'src/templates/menu-view.template.html',
 		controller: 'MenuController as menu',
 		resolve:{
-			myItems: ['$stateParams','MenuDataService', 
-				function($stateParams, MenuDataService){
+			myItems: ['MenuDataService','$stateParams', 
+				function(MenuDataService, $stateParams){
 				return MenuDataService.getItemsForCategory($stateParams.shortname);
 			}]
 		}
