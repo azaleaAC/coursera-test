@@ -48,7 +48,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 		}
 	})
 
-	console.log("i'm in routes.js")
+	console.log("i'm in routes.js at btm")
 
 }
 
