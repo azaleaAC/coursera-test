@@ -47,23 +47,25 @@ service.getAllCategories = function(){
 
 
 //getItemsForCategory(categoryShortName)
-	service.getMatchedMenuItems = function(searchTerm){
+	service.getItemsForCategory = function(categoryShortName){
 
 		//Clear out every time function called
 		var found = [];
 
+
 		return $http({
 			method: "GET",
-			url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
+			url: ("https://davids-restaurant.herokuapp.com/menu_items.json"),
+			params:{category:"categoryShortName"}
 		})
 		.then(function (result) {
 		    // process result and only keep items that match
 	    	var myresult = result.data.menu_items;
 
-	    	if (searchTerm !== ""){
+	    	if (categoryShortName !== ""){
 				for(var i=0; i<myresult.length; i++){
 
-					if (myresult[i].short_name.indexOf(searchTerm) !== -1) {
+					if (myresult[i].short_name.indexOf(categoryShortName) !== -1) {
 						
 						var item = {
 							name: myresult[i].name,
@@ -90,8 +92,8 @@ service.getAllCategories = function(){
 	}
 
 
-	service.getItems = function(searchTerm){
-		service.getMatchedMenuItems(searchTerm);
+	service.getItems = function(categoryShortName){
+		service.getMatchedMenuItems(categoryShortName);
 	}
 }
 

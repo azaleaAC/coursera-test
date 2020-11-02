@@ -17,7 +17,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 	.state('home',{
 		url:'/',
 		templateUrl: 'src/templates/home.template.html',
-		//controller: 'HomeController as home'
+		controller: 'HomeController as home'
 	})
 
 
@@ -42,7 +42,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 		resolve:{
 			items: ['$stateParams','MenuSearchService', 
 				function($stateParams, MenuSearchService){
-				return MenuDataService.getItems($stateParams.shortname);
+				return MenuDataService.getItemsForCategory($stateParams.shortname);
 			}]
 		}
 	})
