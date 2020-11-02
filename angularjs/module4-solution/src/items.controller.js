@@ -10,9 +10,6 @@ function MenuController($rootScope,myItems){
 	var menu = this;
 	menu.items = myItems;
 
-	console.log("the menu items are: ",menu.items);
-
-
 
 	var cancellers = [];
 
