@@ -7,6 +7,7 @@ angular.module('MenuApp')
 RoutesConfig.$inject = ['$stateProvider','$urlRouterProvider'];
 function RoutesConfig($stateProvider,$urlRouterProvider){
 
+console.log("i'm in routes.js")
 	//Redirect to home page if no other URL matches
 	$urlRouterProvider.otherwise('/');
 
@@ -20,7 +21,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 		template: '<a ui-sref="categories">See the Categories for our Menu Items!</a>',
 		controller: 'HomeController as home'
 	})
-/*
+
 
 	//Categories
 	.state('categories',{
@@ -46,7 +47,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 				return MenuDataService.getItemsForCategory($stateParams.shortname);
 			}]
 		}
-	})*/
+	})
 }
 
 
