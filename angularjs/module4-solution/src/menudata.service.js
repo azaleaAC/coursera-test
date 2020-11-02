@@ -46,7 +46,7 @@ service.getAllCategories = function(){
 	}
 
 
-
+//getItemsForCategory(categoryShortName)
 	service.getMatchedMenuItems = function(searchTerm){
 
 		//Clear out every time function called
