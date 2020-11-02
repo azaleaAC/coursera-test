@@ -2,11 +2,11 @@
 'use strict';
 
 angular.module('MenuApp')
-.service('MenuSearchService',MenuSearchService);
+.service('MenuDataService',MenuDataService);
 
 
 MenuSearchService.$inject=['$http'];
-function MenuSearchService($http){
+function MenuDataService($http){
 
 	var service = this;
 

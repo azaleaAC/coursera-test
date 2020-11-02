@@ -4,11 +4,11 @@
 angular.module('MenuApp')
 .controller('MenuController', MenuController);
 
-MenuController.$inject = ['items'];
-function MenuController(items){
+MenuController.$inject = ['myItems'];
+function MenuController(myItems){
 
 	var menu = this;
-	menu.items = items;
+	menu.items = myItems;
 
 	console.log("the menu items are: ",menu.items);
 }

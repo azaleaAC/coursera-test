@@ -42,7 +42,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 		resolve:{
 			items: ['$stateParams','MenuSearchService', 
 				function($stateParams, MenuSearchService){
-				return MenuSearchService.getItems($stateParams.shortname);
+				return MenuDataService.getItems($stateParams.shortname);
 			}]
 		}
 	})
