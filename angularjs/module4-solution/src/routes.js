@@ -41,7 +41,7 @@ function RoutesConfig($stateProvider,$urlRouterProvider){
 		templateUrl: 'src/templates/menu-view.template.html',
 		controller: 'MenuController as menu',
 		resolve:{
-			items: ['$stateParams','MenuDataService', 
+			myItems: ['$stateParams','MenuDataService', 
 				function($stateParams, MenuDataService){
 				return MenuDataService.getItemsForCategory($stateParams.shortname);
 			}]
