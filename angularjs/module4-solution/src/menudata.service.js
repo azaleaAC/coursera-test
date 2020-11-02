@@ -50,7 +50,7 @@ service.getAllCategories = function(){
 
 		//Clear out every time function called
 		var found = [];
-
+		console.log("categoryShortName is ",categoryShortName)
 
 		return $http({
 			method: "GET",
