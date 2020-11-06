@@ -1,4 +1,10 @@
 <div>
-	<span>First Name:</span>
-	<input type="text">
+	<form name='SignUp' novalidate>
+		<span>First Name:</span><input type="text" placeholder="Enter your First Name" ng-model="$ctrl.first" required><span>Please enter your first name.</span>
+		<span>Last Name:</span><input type="text" placeholder="Enter your Last Name">
+		<span>Email Address:</span><input type="text" placeholder="email@domainname">
+		<span>Phone Number:</span><input type="text" placeholder="(###) ###-####">	
+		<span>What is your favourite dish?</span><input type="text" placeholder="L">
+		<br><button>Submit</button>
+	</form>
 </div>
