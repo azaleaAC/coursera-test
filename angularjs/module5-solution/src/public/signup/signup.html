@@ -1,10 +1,15 @@
 <div>
-	<form name='SignUp' novalidate>
-		<span>First Name:</span><input type="text" placeholder="Enter your First Name" ng-model="$ctrl.first" required><span>Please enter your first name.</span>
-		<span>Last Name:</span><input type="text" placeholder="Enter your Last Name">
-		<span>Email Address:</span><input type="text" placeholder="email@domainname">
-		<span>Phone Number:</span><input type="text" placeholder="(###) ###-####">	
+	<form name='SignUpForm' novalidate>
+		<span>First Name:</span><input type="text" placeholder="Enter your First Name" ng-model="SignUpCtrl.user.first" required><span ng-if="SignUpForm.first.$error.required && SignUpForm.first.$touched">Please enter your first name.</span><br>
+		
+		<span>Last Name:</span><input type="text" placeholder="Enter your Last Name"><br>
+		
+		<span>Email Address:</span><input type="text" placeholder="email@domainname"><br>
+		
+		<span>Phone Number:</span><input type="text" placeholder="(###) ###-####">	<br>
+		
 		<span>What is your favourite dish?</span><input type="text" placeholder="L">
+		
 		<br><button>Submit</button>
 	</form>
 </div>
