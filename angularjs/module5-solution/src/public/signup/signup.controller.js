@@ -16,6 +16,7 @@ function SignUpController(MenuService) {
 
  $ctrl.getFav = function(MenuService) {
   	$ctrl.foundItem = MenuService.getFavorite($ctrl.favItem);
+  	console.log($ctrl.foundItem);
   }
 
   $ctrl.Invalid = function(MenuService) {
