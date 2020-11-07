@@ -14,7 +14,7 @@ function SignUpController(MenuService) {
   $ctrl.success = "";
 
 
- $ctrl.getFav = function() {
+ $ctrl.getFav = function(MenuService) {
  	console.log("It's coming into the function!");
   	$ctrl.foundItem = MenuService.getFavorite($ctrl.favItem);
   	console.log($ctrl.foundItem);
