@@ -6,20 +6,22 @@ angular.module('public')
 
 SignUpController.$inject = ['MenuService'];
 function SignUpController(MenuService) {
-  
+
 console.log("CONTROLLER: tostring: ",MenuService.toString(), "actual value : ", MenuService);
 
   var $ctrl = this;
+
+  var MenuDataService = MenuService;
 
   $ctrl.favItem = "";
   $ctrl.Invalid = false;
   $ctrl.success = "";
 
 
- $ctrl.getFav = function(MenuService) {
- 	console.log("GETFAV: tostring: ",MenuService.toString(), "actual value : ", MenuService);
+ $ctrl.getFav = function(MenuDataService) {
+ 	console.log("GETFAV: tostring: ",MenuDataService.toString(), "actual value : ", MenuService);
 
-  	$ctrl.foundItem = MenuService.getFavorite($ctrl.favItem);
+  	$ctrl.foundItem = MenuDataService.getFavorite($ctrl.favItem);
   	console.log($ctrl.foundItem);
   }
 
