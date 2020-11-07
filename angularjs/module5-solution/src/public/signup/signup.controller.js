@@ -11,17 +11,17 @@ console.log("CONTROLLER: tostring: ",MenuService.toString(), "actual value : ", 
 
   var $ctrl = this;
 
-  var MenuDataService = MenuService;
+  MenuService = MenuService;
 
   $ctrl.favItem = "";
   $ctrl.Invalid = false;
   $ctrl.success = "";
 
 
- $ctrl.getFav = function(MenuDataService) {
- 	console.log("GETFAV: tostring: ",MenuDataService.toString(), "actual value : ", MenuService);
+ $ctrl.getFav = function() {
+ 	console.log("GETFAV: tostring: ",MenuService.toString(), "actual value : ", MenuService);
 
-  	$ctrl.foundItem = MenuDataService.getFavorite($ctrl.favItem);
+  	$ctrl.foundItem = MenuService.getFavorite($ctrl.favItem);
   	console.log($ctrl.foundItem);
   }
 
