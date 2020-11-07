@@ -14,7 +14,7 @@
 			
 			<p><span>What is your favourite dish?</span><input type="text" ng-model="$ctrl.favItem" min-length=12><span ng-if="$ctrl.Invalid();">No such menu number exists</span></p>
 			
-			<p><button ng-disabled="SignUpForm.$invalid" ng-click="console.log('click!');">Submit</button></p>
+			<p><button ng-disabled="SignUpForm.$invalid" ng-click="$ctrl.getFav();">Submit</button></p>
 
 			<p>{{$ctrl.success}}</p>
 
