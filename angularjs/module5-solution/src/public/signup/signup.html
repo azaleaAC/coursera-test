@@ -2,11 +2,11 @@
 	<form name='SignUpForm' novalidate>
 		<span>First Name:</span><input type="text" placeholder="Enter your First Name" ng-model="$ctrl.user.first" required><span ng-if="SignUpForm.first.$error.required && SignUpForm.first.$touched">Please enter your first name.</span><br>
 		
-		<span>Last Name:</span><input type="text" placeholder="Enter your Last Name"><br>
+		<span>Last Name:</span><input type="text" placeholder="Enter your Last Name" ng-model="$ctrl.user.last" required><span ng-if="SignUpForm.last.$error.required && SignUpForm.last.$touched">Please enter your last name.</span>><br>
 		
-		<span>Email Address:</span><input type="text" placeholder="email@domainname"><br>
+		<span>Email Address:</span><input type="text" placeholder="email@domainname" ng-model="$ctrl.user.email" required><span ng-if="SignUpForm.email.$error.required && SignUpForm.email.$touched">Please enter a valid email address.</span>><br>
 		
-		<span>Phone Number:</span><input type="text" placeholder="(###) ###-####">	<br>
+		<span>Phone Number:</span><input type="text" placeholder="(###) ###-####" ng-model="$ctrl.user.phone" required><span ng-if="SignUpForm.phone.$error.required && SignUpForm.phone.$touched">Please enter a valid phone number.</span>>	<br>
 		
 		<span>What is your favourite dish?</span><input type="text" placeholder="L">
 		
