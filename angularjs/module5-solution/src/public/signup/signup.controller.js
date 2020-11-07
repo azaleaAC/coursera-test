@@ -4,7 +4,7 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['MenuService']
+SignUpController.$inject = ['MenuService'];
 function SignUpController(MenuService) {
   
   var $ctrl = this;
@@ -15,12 +15,11 @@ function SignUpController(MenuService) {
 
 
  $ctrl.getFav = function(MenuService) {
- 	console.log("It's coming into the function!");
   	$ctrl.foundItem = MenuService.getFavorite($ctrl.favItem);
   	console.log($ctrl.foundItem);
   }
 
-  $ctrl.Invalid = function(MenuService) {
+  $ctrl.Invalid = function() {
   	if($ctrl.foundItem == []){
   		$ctrl.success = "Your information has been saved."
   		return true;
