@@ -30,6 +30,8 @@ function MenuService($http, ApiPath) {
 
 
   service.getFavorite = function(entry) {
+
+    console.log('entry is: ',entry);
     var config = {};
     if(entry) {
       config.params = {'short_name': entry};
