@@ -7,6 +7,8 @@ angular.module('public')
 SignUpController.$inject = ['MenuService'];
 function SignUpController(MenuService) {
   
+console.log(MenuService.toString());
+
   var $ctrl = this;
 
   $ctrl.favItem = "";
