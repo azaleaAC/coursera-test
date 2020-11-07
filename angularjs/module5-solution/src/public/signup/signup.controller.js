@@ -9,7 +9,7 @@ function SignUpController(MenuService) {
 
   var $ctrl = this;
 
-  $ctrl.favItem = "";
+  //$ctrl.favItem = "";
   $ctrl.Invalid = false;
   $ctrl.success = "";
 
