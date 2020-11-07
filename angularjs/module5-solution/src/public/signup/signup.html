@@ -1,5 +1,5 @@
 <div>
-  <h2 class="text-center">Sign Up for our Newsletter1</h2>
+  <h2 class="text-center">Sign Up for our Newsletter2</h2>
 
 	<div>
 		<form name='SignUpForm' novalidate>
@@ -14,9 +14,8 @@
 			
 			<p><span>What is your favourite dish?</span><input type="text" placeholder="L" ng-model="$ctrl.favItem"><span ng-if="$ctrl.Invalid();">No such menu number exists</span></p>
 			
-			<p><button ng-disabled="SignUpForm.$invalid || $ctrl.success <>''" ng-click="$ctrl.getFav();">Submit</button></p>
+			<p><button ng-disabled="SignUpForm.$invalid || $ctrl.success.length === 0" ng-click="$ctrl.getFav();">Submit</button></p>
 
-			<p>{{$ctrl.success}}</p>
 			<p>{{$ctrl.success}}</p>
 
 		</form>
