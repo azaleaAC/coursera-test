@@ -7,7 +7,7 @@ angular.module('public')
 SignUpController.$inject = ['MenuService'];
 function SignUpController(MenuService) {
   
-console.log("tostring: ",MenuService.toString(), "actual value : ", MenuService);
+console.log("CONTROLLER: tostring: ",MenuService.toString(), "actual value : ", MenuService);
 
   var $ctrl = this;
 
@@ -17,6 +17,8 @@ console.log("tostring: ",MenuService.toString(), "actual value : ", MenuService)
 
 
  $ctrl.getFav = function(MenuService) {
+ 	console.log("GETFAV: tostring: ",MenuService.toString(), "actual value : ", MenuService);
+
   	$ctrl.foundItem = MenuService.getFavorite($ctrl.favItem);
   	console.log($ctrl.foundItem);
   }
