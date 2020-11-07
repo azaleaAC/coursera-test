@@ -16,7 +16,8 @@ function SignUpController(MenuService) {
 
  $ctrl.getFav = function(userEntry) {
  	console.log('sending ', userEntry, ' as argument');
-  	$ctrl.foundItem = MenuService.getFavorite(userEntry);
+  	var response = MenuService.getFavorite(userEntry);
+  	$ctrl.foundItem = reponse.data;
   	console.log('found item is: ',$ctrl.foundItem);
   }
 

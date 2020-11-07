@@ -37,9 +37,13 @@ function MenuService($http, ApiPath) {
       config.params = {'short_name': entry};
     }
 
-    return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
+    return $http.get(ApiPath + '/menu_items.json', config)
+    .then(function (response) {
       console.log('response data is: ',response.data); 
       return response.data;
+    })
+    .catch(function (error) {
+      return [];
     });
   };
 }
