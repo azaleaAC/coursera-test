@@ -36,6 +36,7 @@ function MenuService($http, ApiPath) {
     }
 
     return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
+      console.log('response data is: ',response.data); 
       return response.data;
     });
   };
