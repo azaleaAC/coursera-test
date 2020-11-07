@@ -27,7 +27,22 @@ function MenuService($http, ApiPath) {
     });
   };
 
+
+
+  service.getFavorite = function(entry) {
+    var config = {};
+    if(entry) {
+      config.params = {'short_name': entry};
+    }
+
+    return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
+      return response.data;
+    });
+  };
 }
+
+
+
 
 
 
