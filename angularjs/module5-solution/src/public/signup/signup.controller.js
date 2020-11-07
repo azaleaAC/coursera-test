@@ -10,14 +10,16 @@ function SignUpController(MenuService) {
   var $ctrl = this;
 
   $ctrl.Invalid = false;
+  $ctrl.success = "";
 
 
  $ctrl.getFav = function(MenuService) {
-  	var Sctrl.foundItem = MenuService.getFavorite($ctrl.user.fav);
+  	var $ctrl.foundItem = MenuService.getFavorite($ctrl.user.fav);
   }
 
   $ctrl.Invalid = function(MenuService) {
   	if($ctrl.foundItem == []){
+  		$ctrl.success = "Your information has been saved."
   		return true;
   	}
   	else{
