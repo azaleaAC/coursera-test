@@ -11,8 +11,6 @@ console.log("CONTROLLER: tostring: ",MenuService.toString(), "actual value : ", 
 
   var $ctrl = this;
 
-  MenuService = MenuService;
-
   $ctrl.favItem = "";
   $ctrl.Invalid = false;
   $ctrl.success = "";
