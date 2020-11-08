@@ -43,7 +43,7 @@ function SignUpController(MenuService) {
 
   	}
   	else{
-
+  		console.log("length is good.")
   		success = "Your information has been saved."
   		InvalidMsg = "";
 
