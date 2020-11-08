@@ -33,8 +33,6 @@ function MenuService($http, ApiPath) {
 
   service.getFavorite = function(entry) {
 
-    var found = [];
-
     return $http.get(ApiPath + '/menu_items.json')
     .then(function (response) {
 
@@ -46,14 +44,17 @@ function MenuService($http, ApiPath) {
 
             if (myresult[i].short_name === entry) {
               console.log('this is the entry found: ',myresult[i]);
-              found.push(myresult[i]);  
+              return myresult[i];  
             }
           }
         }
 
         console.log('the entry being returned is ',{});
-        return found;
+        return {};
  
+    }).
+    catch(function(error) {
+      console.log("Request unsuccessful");
     });
   };
 };

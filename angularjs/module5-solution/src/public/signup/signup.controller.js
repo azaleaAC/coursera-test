@@ -15,13 +15,19 @@ function SignUpController(MenuService) {
 
 
  $ctrl.getFav = function(userEntry) {
- 	console.log('sending ', userEntry, ' as argument');
+ 	MenuService.getFavorite().then(
+ 		function(data) {
+ 			$scope.$ctrl.foundItem = data;
+ 			console.log("found item is ",$scope.$ctrl.foundItem);
+ 		})
+
+ 	/*console.log('sending ', userEntry, ' as argument');
   	var myResponse = MenuService.getFavorite(userEntry);
   	console.log('myresponse is ',myResponse);
   	console.log('response.state is', myResponse.state);
 	//$ctrl.foundItem = myResponse.$state.value;
   	//console.log('response is ',$ctrl.foundItem);
-  	//console.log('found item is: ',$ctrl.foundItem);
+  	//console.log('found item is: ',$ctrl.foundItem);*/
   }
 
   $ctrl.Invalid = function() {
