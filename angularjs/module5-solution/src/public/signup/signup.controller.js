@@ -47,7 +47,6 @@ function SignUpController(MenuService) {
   		success = "Your information has been saved."
   		InvalidMsg = "";
 
-  		return true;
   	}
 
   	/*var $ctrl.success = success;
@@ -57,6 +56,7 @@ function SignUpController(MenuService) {
   		console.log("invalidmsg: ",InvalidMsg);
   	/*	console.log("$ctrl.success: ",$ctrl.success);
   		console.log("$ctrl.InvalidMsg: ",$ctrl.InvalidMsg);*/
+  		return true;
   }
 
 }
