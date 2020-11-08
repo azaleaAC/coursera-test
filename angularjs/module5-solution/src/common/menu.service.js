@@ -56,6 +56,7 @@ function MenuService($http, ApiPath) {
           }
         }
 
+        console.log('the entry being returned is ',{});
         return {};
  
     });
