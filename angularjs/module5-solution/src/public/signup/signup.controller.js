@@ -29,11 +29,11 @@ function SignUpController(MenuService) {
 
   $ctrl.Invalid = function(ItemFound) {
   	console.log("running function invalid() with foundItem: ",ItemFound);
-
+  	console.log("check 1: length is: ",ItemFound.length);
   	var success;
   	var InvalidMsg;
 
-  	console.log("length is: ",ItemFound.length);
+  	console.log("check 2: length is: ",ItemFound.length);
 
   	if(ItemFound.length === 0){
 
@@ -43,7 +43,7 @@ function SignUpController(MenuService) {
 
   	}
   	else{
-  		
+
   		success = "Your information has been saved."
   		InvalidMsg = "";
 
