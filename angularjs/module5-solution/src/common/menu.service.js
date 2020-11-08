@@ -43,7 +43,7 @@ function MenuService($http, ApiPath) {
     return $http.get(ApiPath + '/menu_items.json')
     .then(function (response) {
 
-      var myresult = result.data.menu_items;
+      var myresult = response.data.menu_items;
       console.log('my entire result is: ',myresult);
 
         if (entry !== ""){
