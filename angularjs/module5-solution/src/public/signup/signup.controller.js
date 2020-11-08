@@ -30,8 +30,8 @@ function SignUpController(MenuService) {
   $ctrl.Valid = function(ItemFound) {
   	console.log("running function invalid() with foundItem: ",ItemFound);
   	console.log("check 1: length is: ",ItemFound.length);
-  	var $ctrl.success;
-  	var $ctrl.InvalidMsg;
+  	//var $ctrl.success;
+  	//var $ctrl.InvalidMsg;
 
   	console.log("check 2: length is: ",ItemFound.length);
 
