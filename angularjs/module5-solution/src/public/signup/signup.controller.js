@@ -32,7 +32,7 @@ function SignUpController(MenuService,$scope) {
   	//console.log('found item is: ',$ctrl.foundItem);*/
   }
 
-  $ctrl.Invalid = function() {
+  $ctrl.Invalid = function($scope) {
   	console.log("running function invalid() with foundItem: ",$scope.foundItem);
   	if($ctrl.foundItem == {}){
   		$ctrl.success = "Your information has been saved."
