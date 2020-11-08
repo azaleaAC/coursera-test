@@ -15,7 +15,7 @@ function SignUpController(MenuService,$scope) {
 
 
  $ctrl.getFav = function(userEntry) {
- 	MenuService.getFavorite().then(
+ 	MenuService.getFavorite(userEntry).then(
  		function(data) {
  			$scope.$ctrl.foundItem = data;
  			console.log("found item is ",$scope.$ctrl.foundItem);
