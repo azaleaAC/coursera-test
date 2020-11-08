@@ -46,7 +46,7 @@ function MenuService($http, ApiPath) {
 
             if (myresult[i].short_name === entry) {
               console.log('this is the entry found: ',myresult[i]);
-              found(myresult[i]).push;  
+              found.push(myresult[i]);  
             }
           }
         }
