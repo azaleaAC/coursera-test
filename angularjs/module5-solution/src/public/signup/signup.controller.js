@@ -33,17 +33,19 @@ function SignUpController(MenuService) {
   	var success;
   	var InvalidMsg;
 
-  	if(ItemFound !== {}){
+  	
+  	if(ItemFound === {}){
 
-  		success = "Your information has been saved."
-  		InvalidMsg = "";
-
-  		return true;
+		InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
+  		return false;
+ 
 
   	}
   	else{
-  		InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
-  		return false;
+  			success = "Your information has been saved."
+  		InvalidMsg = "";
+
+  		return true;
   	}
 
   	$ctrl.success = success;
