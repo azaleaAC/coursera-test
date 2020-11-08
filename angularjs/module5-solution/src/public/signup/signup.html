@@ -1,5 +1,5 @@
 <div>
-  <h2 class="text-center">Sign Up for our Newsletter9</h2>
+  <h2 class="text-center">Sign Up for our Newsletter1</h2>
 
 	<div>
 		<form name='SignUpForm' novalidate>
@@ -12,7 +12,7 @@
 			
 			<p><span>Phone Number:</span><input type="text" name="phone" placeholder="###-###-####" ng-model="$ctrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})"><span ng-if="SignUpForm.phone.$invalid && SignUpForm.phone.$touched">Please enter a valid phone number.</span></p>
 			
-			<p><span>What is your favourite dish?</span><input type="text" ng-model="$ctrl.favItem" min-length=12><span>{{SignUpCtrl.InvalidMsg}}</span></p>{{SignUpCtrl.favItem}}
+			<p><span>What is your favourite dish?</span><input type="text" ng-model="$ctrl.favItem" min-length=12><span>{{$ctrl.InvalidMsg}}</span></p>{{$ctrl.favItem}}
 			
 			<p><button ng-disabled="SignUpForm.$invalid" ng-click="SignUpCtrl.getFav($ctrl.favItem);">Submit</button></p>
 

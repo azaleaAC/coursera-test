@@ -36,7 +36,7 @@ function SignUpController(MenuService) {
   	console.log("check 2: length is: ",ItemFound.length);
 
   	if(ItemFound.length === 0){
-
+  		console.log("empty");
 		InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
   		return false;
  
