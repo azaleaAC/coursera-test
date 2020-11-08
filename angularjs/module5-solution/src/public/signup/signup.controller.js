@@ -33,8 +33,8 @@ function SignUpController(MenuService) {
   	var success;
   	var InvalidMsg;
 
-  	
-  	if(ItemFound === {}){
+
+  	if(ItemFound.length === 0){
 
 		InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
   		return false;
@@ -42,7 +42,7 @@ function SignUpController(MenuService) {
 
   	}
   	else{
-  			success = "Your information has been saved."
+  		success = "Your information has been saved."
   		InvalidMsg = "";
 
   		return true;
