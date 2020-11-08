@@ -29,22 +29,28 @@ function SignUpController(MenuService) {
 
   $ctrl.Invalid = function(ItemFound) {
   	console.log("running function invalid() with foundItem: ",ItemFound);
+
+  	var success;
+  	var InvalidMsg;
+
   	if(ItemFound !== {}){
 
-  		var $ctrl.success = "Your information has been saved."
-  		var $ctrl.InvalidMsg = "";
+  		success = "Your information has been saved."
+  		InvalidMsg = "";
 
   		return true;
 
   	}
   	else{
-  		$ctrl.InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
+  		InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
   		return false;
   	}
 
+  	$ctrl.success = success;
+  	$ctrl.InvalidMsg = InvalidMsg;
 
-  		console.log("success msg: ",$ctrl.success);
-  		console.log("invalidmsg: ",$ctrl.InvalidMsg);
+  		console.log("success msg: ",success,"$ctrl.success: ",$ctrl.success);
+  		console.log("invalidmsg: ",InvalidMsg,"$ctrl.InvalidMsg: ",$ctrl.InvalidMsg);
   }
 
 }
