@@ -25,15 +25,6 @@ function SignUpController(MenuService,$scope) {
  			$ctrl.Invalid($ctrl.foundItem);
 
  		})
-
- 	//console.log("value of $scope.foundItem is ",$ctrl.foundItem);
- 	/*console.log('sending ', userEntry, ' as argument');
-  	var myResponse = MenuService.getFavorite(userEntry);
-  	console.log('myresponse is ',myResponse);
-  	console.log('response.state is', myResponse.state);
-	//$ctrl.foundItem = myResponse.$state.value;
-  	//console.log('response is ',$ctrl.foundItem);
-  	//console.log('found item is: ',$ctrl.foundItem);*/
   }
 
   $ctrl.Invalid = function(ItemFound) {
@@ -43,12 +34,16 @@ function SignUpController(MenuService,$scope) {
   		$ctrl.InvalidMsg = "";
 
   		return true;
+
   	}
   	else{
   		$ctrl.InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
   		return false;
   	}
 
+
+  		console.log("success msg: ",$ctrl.success);
+  		console.log("invalidmsg: ",$ctrl.InvalidMsg);
   }
 
 }
