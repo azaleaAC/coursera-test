@@ -21,6 +21,7 @@ function SignUpController(MenuService,$scope) {
  			console.log("found item is ",$scope.$ctrl.foundItem);
  		})
 
+ 	$ctrl.Invalid();
  	/*console.log('sending ', userEntry, ' as argument');
   	var myResponse = MenuService.getFavorite(userEntry);
   	console.log('myresponse is ',myResponse);
