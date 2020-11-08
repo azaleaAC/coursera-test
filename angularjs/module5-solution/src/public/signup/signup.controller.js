@@ -19,7 +19,7 @@ function SignUpController(MenuService) {
   	var myResponse = MenuService.getFavorite(userEntry);
   	console.log('myresponse is ',myResponse);
   	console.log('response.data is', myResponse.data);
-  	console.logt('response.value is ',myResponse.value);
+  	console.log('response.value is ',myResponse.value);
     console.log('response.d is ', myResponse.d);
     console.log('response.d.value is ', myResponse.d.value);
         console.log('response.d.$$state.value is ', myResponse.d.$$state.value);
