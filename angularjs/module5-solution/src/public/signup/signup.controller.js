@@ -50,12 +50,12 @@ function SignUpController(MenuService) {
   		return true;
   	}
 
-  	var $ctrl.success = success;
-  	var $ctrl.InvalidMsg = InvalidMsg;
+  	/*var $ctrl.success = success;
+  	var $ctrl.InvalidMsg = InvalidMsg;*/
 
   		console.log("success msg: ",success);
   		console.log("invalidmsg: ",InvalidMsg);
-  		console.log("$ctrl.success: ",$ctrl.success);
+  	/*	console.log("$ctrl.success: ",$ctrl.success);
   		console.log("$ctrl.InvalidMsg: ",$ctrl.InvalidMsg);
   }
 
