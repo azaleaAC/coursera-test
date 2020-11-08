@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['MenuService'];
-function SignUpController(MenuService) {
+SignUpController.$inject = ['MenuService','$scope'];
+function SignUpController(MenuService,$scope) {
 
   var $ctrl = this;
 
