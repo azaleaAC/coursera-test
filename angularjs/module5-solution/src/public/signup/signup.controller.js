@@ -18,11 +18,11 @@ function SignUpController(MenuService,$scope) {
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(
  		function(data) {
- 			$scope.foundItem = data;
- 			console.log("found item is ",$scope.foundItem);
+ 			$ctrl.foundItem = data;
+ 			console.log("found item is ",$ctrl.foundItem);
  		})
 
- 	console.log("value of $scope.foundItem is ",$scope.foundItem);
+ 	console.log("value of $scope.foundItem is ",$ctrl.foundItem);
  	$ctrl.Invalid($scope.foundItem);
  	/*console.log('sending ', userEntry, ' as argument');
   	var myResponse = MenuService.getFavorite(userEntry);
