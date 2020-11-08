@@ -18,8 +18,8 @@ function SignUpController(MenuService,$scope) {
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(
  		function(data) {
- 			$scope.$ctrl.foundItem = data;
- 			console.log("found item is ",$scope.$ctrl.foundItem);
+ 			$scope.foundItem = data;
+ 			console.log("found item is ",$scope.foundItem);
  		})
 
  	$ctrl.Invalid();
@@ -33,7 +33,7 @@ function SignUpController(MenuService,$scope) {
   }
 
   $ctrl.Invalid = function() {
-  	console.log("running function invalid() with foundItem: ",$ctrl.foundItem);
+  	console.log("running function invalid() with foundItem: ",$scope.foundItem);
   	if($ctrl.foundItem == {}){
   		$ctrl.success = "Your information has been saved."
   		return true;
