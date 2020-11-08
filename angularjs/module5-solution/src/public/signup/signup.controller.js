@@ -56,7 +56,7 @@ function SignUpController(MenuService) {
   		console.log("success msg: ",success);
   		console.log("invalidmsg: ",InvalidMsg);
   	/*	console.log("$ctrl.success: ",$ctrl.success);
-  		console.log("$ctrl.InvalidMsg: ",$ctrl.InvalidMsg);
+  		console.log("$ctrl.InvalidMsg: ",$ctrl.InvalidMsg);*/
   }
 
 }
