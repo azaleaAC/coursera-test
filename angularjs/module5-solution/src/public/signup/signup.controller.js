@@ -22,7 +22,7 @@ function SignUpController(MenuService,$scope) {
  			console.log("found item is ",$scope.foundItem);
  		})
 
- 	$ctrl.Invalid();
+ 	$ctrl.Invalid($scope.foundItem);
  	/*console.log('sending ', userEntry, ' as argument');
   	var myResponse = MenuService.getFavorite(userEntry);
   	console.log('myresponse is ',myResponse);
@@ -32,10 +32,12 @@ function SignUpController(MenuService,$scope) {
   	//console.log('found item is: ',$ctrl.foundItem);*/
   }
 
-  $ctrl.Invalid = function($scope) {
-  	console.log("running function invalid() with foundItem: ",$scope.foundItem);
-  	if($ctrl.foundItem == {}){
+  $ctrl.Invalid = function(ItemFound) {
+  	console.log("running function invalid() with foundItem: ",ItemFound);
+  	if(ItemFound !== {}){
   		$ctrl.success = "Your information has been saved."
+  		$ctrl.InvalidMsg = "";
+
   		return true;
   	}
   	else{
