@@ -11,6 +11,7 @@ function SignUpController(MenuService,$scope) {
 
   $ctrl.foundItem = "";
   $ctrl.Invalid = false;
+  $ctrl.InvalidMsg = "";
   $ctrl.success = "";
 
 
@@ -38,6 +39,7 @@ function SignUpController(MenuService,$scope) {
   		return true;
   	}
   	else{
+  		$ctrl.InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
   		return false;
   	}
 
