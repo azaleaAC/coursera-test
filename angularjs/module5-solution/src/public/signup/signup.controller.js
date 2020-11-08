@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['MenuService','$scope'];
-function SignUpController(MenuService,$scope) {
+SignUpController.$inject = ['MenuService'];
+function SignUpController(MenuService) {
 
   var $ctrl = this;
 
@@ -18,11 +18,11 @@ function SignUpController(MenuService,$scope) {
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(
  		function(data) {
- 			$ctrl.foundItem = data;
- 			console.log("found item is ",$ctrl.foundItem);
+ 			foundItem = data;
+ 			console.log("found item is ",foundItem);
 
 
- 			$ctrl.Invalid($ctrl.foundItem);
+ 			$ctrl.Invalid(foundItem);
 
  		})
   }
@@ -30,8 +30,9 @@ function SignUpController(MenuService,$scope) {
   $ctrl.Invalid = function(ItemFound) {
   	console.log("running function invalid() with foundItem: ",ItemFound);
   	if(ItemFound !== {}){
-  		$ctrl.success = "Your information has been saved."
-  		$ctrl.InvalidMsg = "";
+
+  		var $ctrl.success = "Your information has been saved."
+  		var $ctrl.InvalidMsg = "";
 
   		return true;
 
