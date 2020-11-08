@@ -56,7 +56,7 @@ function MenuService($http, ApiPath) {
           }
         }
 
-        return [];
+        return {};
  
     });
   };

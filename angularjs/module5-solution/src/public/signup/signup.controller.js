@@ -9,20 +9,20 @@ function SignUpController(MenuService) {
 
   var $ctrl = this;
 
-  //$ctrl.favItem = "";
+  $ctrl.foundItem = "";
   $ctrl.Invalid = false;
   $ctrl.success = "";
 
 
  $ctrl.getFav = function(userEntry) {
  	console.log('sending ', userEntry, ' as argument');
-  	var response = MenuService.getFavorite(userEntry);
-  	console.log('response is ',response.data);
+  	var $ctrl.foundItem = MenuService.getFavorite(userEntry);
+  	console.log('response is ',response);
   	//console.log('found item is: ',$ctrl.foundItem);
   }
 
   $ctrl.Invalid = function() {
-  	if($ctrl.foundItem == []){
+  	if($ctrl.foundItem == {}){
   		$ctrl.success = "Your information has been saved."
   		return true;
   	}
