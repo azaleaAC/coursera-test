@@ -33,21 +33,34 @@ function MenuService($http, ApiPath) {
 
   service.getFavorite = function(entry) {
 
-    console.log('entry is: ',entry);
-    var config = {};
+    //var found = [];
+
+    /*var config = {};
     if(entry) {
       config.params = {'short_name': entry};
     }
-
-    return $http.get(ApiPath + '/menu_items.json', config)
+*/
+    return $http.get(ApiPath + '/menu_items.json')
     .then(function (response) {
-      console.log('response data is: ',response.data); 
-      return response.data;
+
+      var myresult = result.data.menu_items;
+      console.log('my entire result is: ',myresult);
+
+        if (entry !== ""){
+          for(var i=0; i<myresult.length; i++){
+
+            if (myresult[i].short_name === entry) {
+              console.log('this is the entry found: ',myresult[i]);
+              return myresult[i];  
+            }
+          }
+        }
+
+        return [];
+ 
     });
   };
 };
-
-
 
 
 })();
