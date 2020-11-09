@@ -9,6 +9,7 @@ function InfoController(InfoService) {
 
   var $ctrl = this;
 
+
   //$ctrl.UserInfo = {};
   /*$ctrl.UserInfo.first = InfoService.UserInfo.first;
   console.log("INFOCTRL: first is: ", InfoService.UserInfo.first);*/
@@ -21,8 +22,10 @@ function InfoController(InfoService) {
       $ctrl.Registered = false;
   }
   else{
+
       $ctrl.Registered = true;
 
+      var $ctrl.UserInfo = {};
       $ctrl.UserInfo.first = UserInfo.first;
       $ctrl.UserInfo.last = UserInfo.last;
       $ctrl.UserInfo.email = UserInfo.email;
