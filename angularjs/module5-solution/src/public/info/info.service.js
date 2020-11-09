@@ -6,7 +6,7 @@ angular.module('common')
 
 
 InfoService.$inject = ['$http'];
-function MenuService($http) {
+function InfoService($http) {
 
   var service = this;
 
@@ -23,7 +23,7 @@ function MenuService($http) {
     service.UserInfo = UserInfoItem;
   }
 
-
+/*
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
       return response.data;
@@ -73,7 +73,7 @@ function MenuService($http) {
     catch(function(error) {
       console.log("Request unsuccessful");
     });
-  };
+  };*/
 };
 
 
