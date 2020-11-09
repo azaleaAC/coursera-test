@@ -1,32 +1,32 @@
 <div>
-  <h2 class="text-center">My Information5</h2>
+  <h2 class="text-center">My Information6</h2>
 
 	<div>
 		<table ng-if="InfoCtrl.Registered">
 
 			<tr>
 				<th><p><span class="details">First Name:</span></p></th>
-				<th>{{$ctrl.UserInfo.first}}</span></p></th>
+				<th>{{CtrlInfo.UserInfo.first}}</span></p></th>
 			</tr>
 			<tr>
 				<th><p><span class="details">Last Name:</span></p></th>
-				<th>{{$ctrl.UserInfo.last}}</th>
+				<th>{{CtrlInfoUserInfo.last}}</th>
 			</tr>
 			<tr>
 				<th><p><span class="details">Email Address:</span></p></th>
-				<th>{{$ctrl.UserInfo.email}}</th>
+				<th>{{CtrlInfo.UserInfo.email}}</th>
 			</tr>
 			<tr>
 				<th><p><span class="details">Phone Number:</span></p></th>
-				<th>{{$ctrl.UserInfo.phone}}</th>
+				<th>{{CtrlInfo.UserInfo.phone}}</th>
 			</tr>
 			<tr>
 				<th><p><span>My favourite dish is:</span></p></th>
-				<th>{{$ctrl.foundItem.short_name}} - {{$ctrl.foundItem.name}}</span>
+				<th>{{CtrlInfo.foundItem.short_name}} - {{CtrlInfo.foundItem.name}}</span>
 			</tr>
 		</table>
 
-		<img ng-if="InfoCtrl.Registered" class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.foundItem.short_name}}.jpg" alt="{{$ctrl.foundItem.name}}">
+		<img ng-if="!(InfoCtrl.Registered)" class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.foundItem.short_name}}.jpg" alt="{{$ctrl.foundItem.name}}">
 
 			<p class="myMsg" ng-if="!($ctrl.Registered)">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
 	</div>
