@@ -22,12 +22,13 @@ function SignUpController($scope,MenuService,InfoService) {
   $ctrl.user.favItem="";
 
 
- $ctrl.getFav = function(userEntry) {
+ $ctrl.getFav = function(userDetails) {
 
-	console.log('GETFAV: the value of $ctrl.user is :',$ctrl.user);
- 	console.log('GETFAV: the value of $ctrl.user.first is :',$ctrl.user.first);
 
- 	$scope.user = $ctrl.user;
+	console.log('GETFAV: the value of $ctrl.user is :',userDetails);
+ 	console.log('GETFAV: the value of $ctrl.user.first is :',userDetails.first);
+
+ 	$scope.user = userDetails;
 
  	MenuService.getFavorite(userEntry).then(
  		function(data) {
