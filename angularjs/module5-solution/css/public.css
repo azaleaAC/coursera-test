@@ -130,7 +130,7 @@ button {
   font-style: italic;
 }
 
-#success {
+.myMsg {
   text-align: center;
   font-size: 125%;
 }

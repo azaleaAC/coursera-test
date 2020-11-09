@@ -21,14 +21,16 @@ function SignUpController(MenuService,InfoService,$scope) {
   $ctrl.user.phone="";
   $ctrl.user.favItem="";
 
-  $scope.user = $ctrl.user;
 
-
- $ctrl.getFav = function(userEntry) {
+ $ctrl.getFav = function(userEntry,$scope) {
  	MenuService.getFavorite(userEntry).then(
  		function(data) {
  			var foundItem = data;
  			console.log("found item is ",foundItem);
+
+
+ 			$scope.user = $ctrl.user;
+ 			  console.log('GETFAV: the value of $ctrl.user is :',$ctrl.user);
 
 
  			$ctrl.ValidEntry = $ctrl.Valid(foundItem,$scope);
@@ -39,7 +41,7 @@ function SignUpController(MenuService,InfoService,$scope) {
 
   $ctrl.Valid = function(ItemFound,$scope) {
   	//console.log("running function invalid() with foundItem: ",ItemFound);
-  		console.log('check 1: the value of $ctrl.user.first is :',$scope.user);
+  		console.log('check 1: the value of $ctrl.user is :',$scope.user);
 
   	if(ItemFound.length === 0){
 		$ctrl.InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
