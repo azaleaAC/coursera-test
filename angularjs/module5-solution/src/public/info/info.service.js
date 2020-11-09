@@ -19,11 +19,12 @@ function InfoService() {
 
     console.log("inside the saveInfo service function");
 
-    UserInfoItem.first = FName;
+   /* UserInfoItem.first = FName;
     UserInfoItem.last = LName;
     UserInfoItem.email = Email;
     UserInfoItem.phone = Phone;
-    UserInfoItem.favItem = FavItem;
+    UserInfoItem.favItem = FavItem;*/
+    
 
     console.log("INFOSERVICE: useriteminfo is: ",UserInfoItem);
 
