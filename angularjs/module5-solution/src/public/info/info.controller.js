@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('InfoController', InfoController);
 
-InfoController.$inject = ['InfoService'];
-function InfoController(InfoService) {
+InfoController.$inject = ['InfoService','ApiPath'];
+function InfoController(InfoService,ApiPath) {
 
   var $ctrl = this;
 
@@ -15,7 +15,7 @@ function InfoController(InfoService) {
   console.log("INFOCTRL: first is: ", InfoService.UserInfo.first);*/
 
   var UserInfo = InfoService.UserInfo;
-  console.log('$ctrl.UserInfo is: ',UserInfo);
+  console.log('UserInfo is: ',UserInfo);
 
 
   if(UserInfo.length === 0){
@@ -26,14 +26,16 @@ function InfoController(InfoService) {
       $ctrl.Registered = true;
 
       $ctrl.UserInfo = {};
-      
-      $ctrl.UserInfo.first = UserInfo.first;
-      $ctrl.UserInfo.last = UserInfo.last;
-      $ctrl.UserInfo.email = UserInfo.email;
-      $ctrl.UserInfo.phone = UserInfo.phone;
-      $ctrl.UserInfo.favItem = UserInfo.favItem;
 
-  console.log("fav item is: ",$ctrl.UserInfo.favItem);
+      console.log("user info first is ",UserInfo[0].first);
+
+      $ctrl.UserInfo.first = UserInfo[0].first;
+      $ctrl.UserInfo.last = UserInfo[0].last;
+      $ctrl.UserInfo.email = UserInfo[0].email;
+      $ctrl.UserInfo.phone = UserInfo[0].phone;
+      $ctrl.UserInfo.favItem = UserInfo[0].favItem;
+
+  console.log("fav item is: ",$ctrl.UserInfo[0].favItem);
 
   }
   console.log("Registered?:", $ctrl.Registered);
