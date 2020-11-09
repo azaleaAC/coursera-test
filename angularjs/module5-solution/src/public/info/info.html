@@ -1,0 +1,36 @@
+<div>
+  <h2 class="text-center">My Information1</h2>
+
+	<div>
+		<form name='InfoForm' novalidate>
+
+			<table>
+
+			<tr>
+				<th><p><span class="details">First Name:</span></p></th>
+				<th>{{$ctrl.first}}</span></p></th>
+			</tr>
+			<tr>
+				<th><p><span class="details">Last Name:</span></p></th>
+				<th>{{$ctrl.last}}</th>
+			</tr>
+			<tr>
+				<th><p><span class="details">Email Address:</span></p></th>
+				<th>{{$ctrl.email}}</th>
+			</tr>
+			<tr>
+				<th><p><span class="details">Phone Number:</span></p></th>
+				<th>{{$ctrl.phone}}</th>
+			</tr>
+			<tr>
+				<th></th>
+			</tr>
+			<tr>
+				<th><p><span>My favourite dish is:</span></p></th>
+				<th>{{$ctrl.foundItem.short_name}} - {{$ctrl.foundItem.name}}</span>
+			</tr>
+			</table>
+
+		</form>
+	</div>
+</div>

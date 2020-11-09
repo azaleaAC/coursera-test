@@ -117,6 +117,11 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+
+.details{
+  text-align: right;
+}
+
 .signUpError {
   font-size: 75%;
   font-style: italic;

@@ -12,7 +12,7 @@ function SignUpController(MenuService) {
   $ctrl.foundItem = "";
   $ctrl.ValidEntry = true;
   $ctrl.InvalidMsg = "";
-  $ctrl.success = "";
+  $ctrl.successMsg = "";
 
 
  $ctrl.getFav = function(userEntry) {
@@ -44,7 +44,7 @@ function SignUpController(MenuService) {
   	}
   	else{
   		console.log("length is good.")
-  		$ctrl.success = "Your information has been saved."
+  		$ctrl.successMsg = "Your information has been saved."
   		$ctrl.InvalidMsg = "";
 
   	}
@@ -52,7 +52,7 @@ function SignUpController(MenuService) {
   	/*var $ctrl.success = success;
   	var $ctrl.InvalidMsg = InvalidMsg;*/
 
-  		console.log("success msg: ",$ctrl.success);
+  		console.log("success msg: ",$ctrl.successMsg,'. length is :',$ctrl.successMsg.length);
   		console.log("invalidmsg: ",$ctrl.InvalidMsg);
   	/*	console.log("$ctrl.success: ",$ctrl.success);
   		console.log("$ctrl.InvalidMsg: ",$ctrl.InvalidMsg);*/

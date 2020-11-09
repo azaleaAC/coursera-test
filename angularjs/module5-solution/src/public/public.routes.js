@@ -43,7 +43,9 @@ function routeConfig ($stateProvider) {
     })
     .state('public.info', {
       url: '/myinfo', 
-      templateUrl: 'src/public/info/info.html'
+      templateUrl: 'src/public/info/info.html',
+      controller:'InfoController',
+      controllerAs: 'InfoCtrl'
     })
     .state('public.signup', {
       url: '/signup', 
