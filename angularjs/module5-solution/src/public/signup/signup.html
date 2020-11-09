@@ -1,5 +1,5 @@
 <div>
-  <h2 class="text-center">Sign Up for our Newsletter6</h2>
+  <h2 class="text-center">Sign Up for our Newsletter7</h2>
 
 	<div>
 		<form name='SignUpForm' novalidate>
@@ -30,10 +30,10 @@
 				<th><input type="text" ng-model="$ctrl.favItem" min-length=12><span class="signUpError">{{SignUpCtrl.InvalidMsg}}</span></th>
 			</tr>
 			</table>
+			<p>valid entry is {{SignUpCtrl.ValidEntry}}
+			<p><button ng-disabled="SignUpForm.$invalid" ng-click="SignUpCtrl.getFav($ctrl.favItem);">Submit</button></p>
 
-			<p><button ng-disabled="SignUpForm.$invalid || SignUpCtrl.ValidEntry" ng-click="SignUpCtrl.getFav($ctrl.favItem);">Submit</button></p>
-
-			<p id="success">{{SignUpCtrl.successMsg}}</p>
+			<p class="text-center">{{SignUpCtrl.successMsg}}</p>
 
 		</form>
 	</div>
