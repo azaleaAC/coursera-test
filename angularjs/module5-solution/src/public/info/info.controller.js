@@ -9,12 +9,13 @@ function InfoController(InfoService) {
 
   var $ctrl = this;
 
-  $ctrl.UserInfo = {};
-  $ctrl.UserInfo.first = InfoService.UserInfo.first;
-  console.log("INFOCTRL: first is: ", InfoService.UserInfo.first);
+  //$ctrl.UserInfo = {};
+  /*$ctrl.UserInfo.first = InfoService.UserInfo.first;
+  console.log("INFOCTRL: first is: ", InfoService.UserInfo.first);*/
 
-  $ctrl.UserInfo = InfoService.UserInfo;
-  console.log('$ctrl.UserInfo is: ',$ctrl.UserInfo);
+  var UserInfo = InfoService.UserInfo;
+  console.log('$ctrl.UserInfo is: ',UserInfo);
+
 
   if($ctrl.UserInfo.length === 0){
       $ctrl.Registered = false;
@@ -23,6 +24,15 @@ function InfoController(InfoService) {
       $ctrl.Registered = true;
   }
   console.log("Registered?:", $ctrl.Registered);
+
+
+  $ctrl.UserInfo.first = UserInfo.first;
+  $ctrl.UserInfo.last = UserInfo.last;
+  $ctrl.UserInfo.email = UserInfo.email;
+  $ctrl.UserInfo.phone = UserInfo.phone;
+  $ctrl.UserInfo.favItem = UserInfo.favItem;
+
+  console.log("fav item is: ",$ctrl.UserInfo.favItem);
 
 
  $ctrl.getFav = function(userEntry) {
