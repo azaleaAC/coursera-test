@@ -1,10 +1,8 @@
 <div>
-  <h2 class="text-center">My Information4</h2>
+  <h2 class="text-center">My Information5</h2>
 
 	<div>
-		<form name='InfoForm' novalidate>
-
-			<table>
+		<table>
 
 			<tr>
 				<th><p><span class="details">First Name:</span></p></th>
@@ -29,12 +27,10 @@
 				<th><p><span>My favourite dish is:</span></p></th>
 				<th>{{$ctrl.foundItem.short_name}} - {{$ctrl.foundItem.name}}</span>
 			</tr>
-			</table>
+		</table>
 
-			        <img class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.menuItem.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
+		<img class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.menuItem.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
 
 			<p class="myMsg">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
-
-		</form>
 	</div>
 </div>

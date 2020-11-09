@@ -23,12 +23,12 @@ function InfoService() {
     UserInfoItem.phone = Phone;
     UserInfoItem.favItem = FavItem;
 
-    console.log("useriteminfo is: ",UserInfoItem);
+    console.log("INFOSERVICE: useriteminfo is: ",UserInfoItem);
 
     UserArray.push(UserInfoItem);
 
     service.UserInfo = UserArray;
-        console.log("service.userinfo is: ",service.UserInfo);
+        console.log("INFOSERVICE: service.userinfo is: ",service.UserInfo);
 
   }
 
