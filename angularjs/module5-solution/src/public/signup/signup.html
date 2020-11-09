@@ -1,5 +1,5 @@
 <div>
-  <h2 class="text-center">Sign Up for our Newsletter4</h2>
+  <h2 class="text-center">Sign Up for our Newsletter5</h2>
 
 	<div>
 		<form name='SignUpForm' novalidate>
@@ -33,7 +33,7 @@
 
 			<p><button ng-disabled="SignUpForm.$invalid" ng-click="SignUpCtrl.getFav($ctrl.favItem);">Submit</button></p>
 
-			<p>1.{{SignUpCtrl.successMsg}} 2.{{$ctrl.successMsg}}</p>
+			<p id="success">{{SignUpCtrl.successMsg}}</p>
 
 		</form>
 	</div>

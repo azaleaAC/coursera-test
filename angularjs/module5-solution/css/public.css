@@ -127,7 +127,10 @@ h3.menu-item-title {
   font-style: italic;
 }
 
-
+#success {
+  text-align: center;
+  font-size: 125%;
+}
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {

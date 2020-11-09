@@ -35,7 +35,9 @@ function SignUpController(MenuService,InfoService) {
   }
 
   $ctrl.Valid = function(ItemFound) {
-  	console.log("running function invalid() with foundItem: ",ItemFound);
+  	//console.log("running function invalid() with foundItem: ",ItemFound);
+  	console.log("")
+  		console.log('check 1: the value of $ctrl.user.first is :',$ctrl.user.first);
 
   	if(ItemFound.length === 0){
   		//console.log("empty");
@@ -46,7 +48,7 @@ function SignUpController(MenuService,InfoService) {
   	}
   	else{
   		//console.log("length is good.");
-  		console.log($ctrl.user.first);
+  		console.log('check 2: the value of $ctrl.user.first is :',$ctrl.user.first);
   		InfoService.saveInfo($ctrl.user.first, $ctrl.user.last, $ctrl.user.email, $ctrl.user.phone, $ctrl.user.favItem);
   		$ctrl.successMsg = "Your information has been saved."
   		$ctrl.InvalidMsg = "";
