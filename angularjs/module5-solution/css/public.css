@@ -119,13 +119,13 @@ h3.menu-item-title {
 
 button {
   margin: 20px 0px;
-  color: #951c49;
+  color: #61122f;
   background-color: #f6b319;
 }
 
 button:disabled {
   color:white;
-  background-color:#951c49; 
+  background-color:#61122f; 
 }
 
 .details{
