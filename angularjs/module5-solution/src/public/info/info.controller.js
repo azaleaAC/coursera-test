@@ -9,13 +9,22 @@ function InfoController(InfoService,ApiPath) {
 
   var $ctrl = this;
 
-  //$ctrl.UserInfo = {};
-  /*$ctrl.UserInfo.first = InfoService.UserInfo.first;
-  console.log("INFOCTRL: first is: ", InfoService.UserInfo.first);*/
+
+ $ctrl.getFav = function(userEntry) {
+  
+    MenuService.getFavorite(userEntry).then(
+    function(data) {
+      var foundItem = data;
+      console.log("found item is ",foundItem);
+
+      return foundItem;
+      //$ctrl.foundItem = foundItem;
+
+    })
+  };
+
 
   var UserInfo = InfoService.UserInfo;
-  console.log('UserInfo is: ',UserInfo);
-
 
   if(UserInfo.length === 0){
       $ctrl.Registered = false;
@@ -34,30 +43,15 @@ function InfoController(InfoService,ApiPath) {
       $ctrl.UserInfo.phone = UserInfo[0].phone;
       $ctrl.UserInfo.favItem = UserInfo[0].favItem;
 
-  console.log("fav item is: ",$ctrl.UserInfo.favItem);
+      console.log("fav item is: ",$ctrl.UserInfo.favItem);
 
-    $ctrl.foundItem = $ctrl.getFav($ctrl.UserInfo.favItem);
+      $ctrl.foundItem = $ctrl.getFav($ctrl.UserInfo.favItem);
+      $ctrl.basePath = ApiPath;
 
   }
+
   console.log("Registered?:", $ctrl.Registered);
 
-  console.log("Apipath is: ",ApiPath);
-  $ctrl.basePath = ApiPath;
-
-
-
-
- $ctrl.getFav = function(userEntry) {
- 	MenuService.getFavorite(userEntry).then(
- 		function(data) {
- 			var foundItem = data;
- 			console.log("found item is ",foundItem);
-
-      return foundItem;
- 			//$ctrl.foundItem = foundItem;
-
- 		})
-  }
 
 }
 
