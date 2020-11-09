@@ -9,7 +9,9 @@ function InfoController(InfoService) {
 
   var $ctrl = this;
 
-/*
+
+  $ctrl.UserInfo = InfoService.UserInfo();
+
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(
  		function(data) {
@@ -20,7 +22,7 @@ function InfoController(InfoService) {
  			$ctrl.foundItem = foundItem;
 
  		})
-  }*/
+  }
 
 }
 

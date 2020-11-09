@@ -21,6 +21,7 @@ function InfoService($http) {
     UserInfoItem.favItem = FavItem;
 
     service.UserInfo = UserInfoItem;
+    console.log("useriteminfo is: ",UserInfoItem);
   }
 
 /*
