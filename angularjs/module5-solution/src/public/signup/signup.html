@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h2>Sign Up for our Newsletter4</h2>
+  <h2>Sign Up for our Newsletter5</h2>
 
 	<div>
 		<form name='SignUpForm' novalidate>
@@ -31,7 +31,7 @@
 			</tr>
 			</table>
 			<p>valid entry is {{SignUpCtrl.ValidEntry}}
-			<p><button ng-disabled="SignUpForm.$invalid" ng-click="SignUpCtrl.getFav($ctrl.user.favItem);">Submit</button></p>
+			<p><button ng-disabled="SignUpForm.$invalid" ng-click="SignUpCtrl.getFav($ctrl.user);">Submit</button></p>
 
 			<p class="myMsg">{{SignUpCtrl.successMsg}}</p>
 			<p>value of $ctrl.user is {{$ctrl.user}}</p>
