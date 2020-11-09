@@ -12,7 +12,7 @@ function InfoService($http) {
 
 
   service.saveInfo = function(FName, LName, Email, Phone, FavItem) {
-    var UserInfoItem;
+    var UserInfoItem = {};
 
     UserInfoItem.first = FName;
     UserInfoItem.last = LName;
