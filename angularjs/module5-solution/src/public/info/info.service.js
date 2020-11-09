@@ -11,7 +11,8 @@ function InfoService() {
   var service = this;
   var UserArray = [];
 
-
+  service.UserInfo = UserArray;
+  
   //service.saveInfo = function(FName, LName, Email, Phone, FavItem) {
   service.saveInfo = function(UserInfo) {
     
@@ -24,7 +25,7 @@ function InfoService() {
     UserInfoItem.email = Email;
     UserInfoItem.phone = Phone;
     UserInfoItem.favItem = FavItem;*/
-    
+
 
     console.log("INFOSERVICE: useriteminfo is: ",UserInfoItem);
 

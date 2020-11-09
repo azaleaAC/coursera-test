@@ -9,7 +9,6 @@ function InfoController(InfoService,ApiPath) {
 
   var $ctrl = this;
 
-
   //$ctrl.UserInfo = {};
   /*$ctrl.UserInfo.first = InfoService.UserInfo.first;
   console.log("INFOCTRL: first is: ", InfoService.UserInfo.first);*/
