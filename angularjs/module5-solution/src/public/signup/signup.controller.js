@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['MenuService','InfoService','$scope'];
-function SignUpController(MenuService,InfoService,$scope) {
+SignUpController.$inject = ['$scope','MenuService','InfoService'];
+function SignUpController($scope,MenuService,InfoService) {
 
   var $ctrl = this;
 
@@ -22,15 +22,15 @@ function SignUpController(MenuService,InfoService,$scope) {
   $ctrl.user.favItem="";
 
 
- $ctrl.getFav = function(userEntry,$scope) {
+ $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(
  		function(data) {
  			var foundItem = data;
- 			console.log("found item is ",foundItem);
+ 			//console.log("found item is ",foundItem);
 
+ 			  console.log('GETFAV: the value of $ctrl.user is :',$ctrl.user);
 
  			$scope.user = $ctrl.user;
- 			  console.log('GETFAV: the value of $ctrl.user is :',$ctrl.user);
 
 
  			$ctrl.ValidEntry = $ctrl.Valid(foundItem,$scope);

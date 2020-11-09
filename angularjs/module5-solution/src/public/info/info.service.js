@@ -9,6 +9,7 @@ InfoService.$inject = ['$http'];
 function InfoService($http) {
 
   var service = this;
+  var UserArray = [];
 
 
   service.saveInfo = function(FName, LName, Email, Phone, FavItem) {
@@ -24,7 +25,9 @@ function InfoService($http) {
 
     console.log("useriteminfo is: ",UserInfoItem);
 
-    service.UserInfo = UserInfoItem;
+    UserArray.push(UserInfoItem);
+
+    service.UserInfo = UserArray;
         console.log("service.useriteminfo is: ",service.UserInfo);
 
   }
