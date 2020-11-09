@@ -47,19 +47,15 @@ function SignUpController(MenuService,InfoService) {
   	else{
   		console.log("length is good.");
 
-  		InfoService.saveInfo($ctrl.first, $ctrl.last, $ctrl.email, $ctrl.phone, $ctrl.favItem);
+  		InfoService.saveInfo($ctrl.user.first, $ctrl.user.last, $ctrl.user.email, $ctrl.user.phone, $ctrl.user.favItem);
   		$ctrl.successMsg = "Your information has been saved."
   		$ctrl.InvalidMsg = "";
 
   	}
 
-  	/*var $ctrl.success = success;
-  	var $ctrl.InvalidMsg = InvalidMsg;*/
-
   		console.log("success msg: ",$ctrl.successMsg,'. length is :',$ctrl.successMsg.length);
   		console.log("invalidmsg: ",$ctrl.InvalidMsg);
-  	/*	console.log("$ctrl.success: ",$ctrl.success);
-  		console.log("$ctrl.InvalidMsg: ",$ctrl.InvalidMsg);*/
+  	
   		return true;
   }
 
