@@ -14,6 +14,12 @@ function SignUpController(MenuService,InfoService) {
   $ctrl.InvalidMsg = "";
   $ctrl.successMsg = "";
 
+  $ctrl.first="";
+  $ctrl.last="";
+  $ctrl.email="";
+  $ctrl.phone="";
+  $ctrl.favItem="";
+
 
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(

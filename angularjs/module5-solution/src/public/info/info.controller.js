@@ -10,7 +10,7 @@ function InfoController(InfoService) {
   var $ctrl = this;
 
 
-  $ctrl.UserInfo = InfoService.UserInfo();
+  $ctrl.UserInfo = InfoService.UserInfo;
   console.log('$ctrl.UserInfo is: ',$ctrl.UserInfo);
 
  $ctrl.getFav = function(userEntry) {
