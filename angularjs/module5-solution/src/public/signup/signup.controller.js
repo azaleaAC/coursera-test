@@ -15,7 +15,7 @@ function SignUpController($scope,MenuService,InfoService) {
   $ctrl.successMsg = "";
 
   $ctrl.user = {};
-  
+
   $ctrl.user.first="";
   $ctrl.user.last="";
   $ctrl.user.email="";

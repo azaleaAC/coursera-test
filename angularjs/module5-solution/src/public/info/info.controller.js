@@ -40,7 +40,7 @@ function InfoController(InfoService,ApiPath) {
   }
   console.log("Registered?:", $ctrl.Registered);
 
-  console.log("Apipath is: ",Apipath);
+  console.log("Apipath is: ",ApiPath);
   $ctrl.basePath = ApiPath;
 
  $ctrl.getFav = function(userEntry) {
