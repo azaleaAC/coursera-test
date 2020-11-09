@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('InfoController', InfoController);
 
-InfoController.$inject = ['InfoService','ApiPath'];
-function InfoController(InfoService,ApiPath) {
+InfoController.$inject = ['MenuService','InfoService','ApiPath'];
+function InfoController(MenuService,InfoService,ApiPath) {
 
   var $ctrl = this;
 
