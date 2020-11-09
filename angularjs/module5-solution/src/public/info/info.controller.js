@@ -17,23 +17,25 @@ function InfoController(InfoService) {
   console.log('$ctrl.UserInfo is: ',UserInfo);
 
 
-  if($ctrl.UserInfo.length === 0){
+  if(UserInfo.length === 0){
       $ctrl.Registered = false;
   }
   else{
       $ctrl.Registered = true;
-  }
-  console.log("Registered?:", $ctrl.Registered);
 
-
-  $ctrl.UserInfo.first = UserInfo.first;
-  $ctrl.UserInfo.last = UserInfo.last;
-  $ctrl.UserInfo.email = UserInfo.email;
-  $ctrl.UserInfo.phone = UserInfo.phone;
-  $ctrl.UserInfo.favItem = UserInfo.favItem;
+      $ctrl.UserInfo.first = UserInfo.first;
+      $ctrl.UserInfo.last = UserInfo.last;
+      $ctrl.UserInfo.email = UserInfo.email;
+      $ctrl.UserInfo.phone = UserInfo.phone;
+      $ctrl.UserInfo.favItem = UserInfo.favItem;
 
   console.log("fav item is: ",$ctrl.UserInfo.favItem);
 
+  }
+  console.log("Registered?:", $ctrl.Registered);
+
+  console.log("Apipath is: ",Apipath);
+  $ctrl.basePath = ApiPath;
 
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(
