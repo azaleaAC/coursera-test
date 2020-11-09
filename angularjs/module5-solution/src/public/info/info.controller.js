@@ -9,6 +9,10 @@ function InfoController(InfoService) {
 
   var $ctrl = this;
 
+  $ctrl.UserInfo = {};
+  $ctrl.UserInfo.first = InfoService.UserInfo.first;
+  console.log("INFOCTRL: first is: ", InfoService.UserInfo.first);
+
   $ctrl.UserInfo = InfoService.UserInfo;
   console.log('$ctrl.UserInfo is: ',$ctrl.UserInfo);
 
@@ -18,6 +22,7 @@ function InfoController(InfoService) {
   else{
       $ctrl.Registered = true;
   }
+  console.log("Registered?:", $ctrl.Registered);
 
 
  $ctrl.getFav = function(userEntry) {
