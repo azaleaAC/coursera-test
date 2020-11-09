@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['MenuService','InfoService'];
-function SignUpController(MenuService,InfoService) {
+SignUpController.$inject = ['MenuService','InfoService','$scope'];
+function SignUpController(MenuService,InfoService,$scope) {
 
   var $ctrl = this;
 
@@ -21,6 +21,8 @@ function SignUpController(MenuService,InfoService) {
   $ctrl.user.phone="";
   $ctrl.user.favItem="";
 
+  $scope.user = $ctrl.user;
+
 
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(
@@ -30,33 +32,28 @@ function SignUpController(MenuService,InfoService) {
 
 
  			$ctrl.ValidEntry = $ctrl.Valid(foundItem);
+ 			console.log('value of valid entry is: ',$ctrl.ValidEntry);
 
  		})
   }
 
   $ctrl.Valid = function(ItemFound) {
   	//console.log("running function invalid() with foundItem: ",ItemFound);
-  	console.log("")
-  		console.log('check 1: the value of $ctrl.user.first is :',$ctrl.user.first);
+  		console.log('check 1: the value of $ctrl.user.first is :',$scope.user.first);
 
   	if(ItemFound.length === 0){
-  		//console.log("empty");
 		$ctrl.InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
   		return false;
  
 
   	}
   	else{
-  		//console.log("length is good.");
-  		console.log('check 2: the value of $ctrl.user.first is :',$ctrl.user.first);
+  		console.log('check 2: the value of $ctrl.user.first is :',$scope.user.first);
   		InfoService.saveInfo($ctrl.user.first, $ctrl.user.last, $ctrl.user.email, $ctrl.user.phone, $ctrl.user.favItem);
   		$ctrl.successMsg = "Your information has been saved."
   		$ctrl.InvalidMsg = "";
 
   	}
-
-  		//console.log("success msg: ",$ctrl.successMsg,'. length is :',$ctrl.successMsg.length);
-  		//console.log("invalidmsg: ",$ctrl.InvalidMsg);
   	
   		return true;
   }
