@@ -14,11 +14,11 @@ function SignUpController(MenuService,InfoService) {
   $ctrl.InvalidMsg = "";
   $ctrl.successMsg = "";
 
-  $ctrl.first="";
-  $ctrl.last="";
-  $ctrl.email="";
-  $ctrl.phone="";
-  $ctrl.favItem="";
+  $ctrl.user.first="";
+  $ctrl.user.last="";
+  $ctrl.user.email="";
+  $ctrl.user.phone="";
+  $ctrl.user.favItem="";
 
 
  $ctrl.getFav = function(userEntry) {
@@ -35,11 +35,6 @@ function SignUpController(MenuService,InfoService) {
 
   $ctrl.Valid = function(ItemFound) {
   	console.log("running function invalid() with foundItem: ",ItemFound);
-  	console.log("check 1: length is: ",ItemFound.length);
-  	//var $ctrl.success;
-  	//var $ctrl.InvalidMsg;
-
-  	console.log("check 2: length is: ",ItemFound.length);
 
   	if(ItemFound.length === 0){
   		console.log("empty");
