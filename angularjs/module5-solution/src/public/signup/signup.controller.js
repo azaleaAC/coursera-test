@@ -38,23 +38,23 @@ function SignUpController(MenuService,InfoService) {
   	console.log("running function invalid() with foundItem: ",ItemFound);
 
   	if(ItemFound.length === 0){
-  		console.log("empty");
+  		//console.log("empty");
 		$ctrl.InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
   		return false;
  
 
   	}
   	else{
-  		console.log("length is good.");
-
+  		//console.log("length is good.");
+  		console.log($ctrl.user.first);
   		InfoService.saveInfo($ctrl.user.first, $ctrl.user.last, $ctrl.user.email, $ctrl.user.phone, $ctrl.user.favItem);
   		$ctrl.successMsg = "Your information has been saved."
   		$ctrl.InvalidMsg = "";
 
   	}
 
-  		console.log("success msg: ",$ctrl.successMsg,'. length is :',$ctrl.successMsg.length);
-  		console.log("invalidmsg: ",$ctrl.InvalidMsg);
+  		//console.log("success msg: ",$ctrl.successMsg,'. length is :',$ctrl.successMsg.length);
+  		//console.log("invalidmsg: ",$ctrl.InvalidMsg);
   	
   		return true;
   }

@@ -22,7 +22,7 @@ function MenuService($http, ApiPath) {
     if (category) {
       config.params = {'category': category};
     }
-    console.log('looking for ',category);
+    //console.log('looking for ',category);
 
     return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
       console.log(response.data);
@@ -40,7 +40,7 @@ function MenuService($http, ApiPath) {
     .then(function (response) {
 
       var myresult = response.data.menu_items;
-      console.log('my entire result is: ',myresult);
+      //console.log('my entire result is: ',myresult);
 
         if (entry !== ""){
           for(var i=0; i<myresult.length; i++){
