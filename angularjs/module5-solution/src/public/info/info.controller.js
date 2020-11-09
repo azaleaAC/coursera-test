@@ -25,9 +25,9 @@ function InfoController(InfoService,ApiPath) {
 
       $ctrl.Registered = true;
 
-      $ctrl.UserInfo = {};
-
       console.log("user info first is ",UserInfo[0].first);
+
+      $ctrl.UserInfo = {};
 
       $ctrl.UserInfo.first = UserInfo[0].first;
       $ctrl.UserInfo.last = UserInfo[0].last;
@@ -35,7 +35,7 @@ function InfoController(InfoService,ApiPath) {
       $ctrl.UserInfo.phone = UserInfo[0].phone;
       $ctrl.UserInfo.favItem = UserInfo[0].favItem;
 
-  console.log("fav item is: ",$ctrl.UserInfo[0].favItem);
+  console.log("fav item is: ",$ctrl.UserInfo.favItem);
 
   }
   console.log("Registered?:", $ctrl.Registered);
