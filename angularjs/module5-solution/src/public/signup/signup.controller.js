@@ -30,7 +30,7 @@ function SignUpController($scope,MenuService,InfoService) {
 
  	$scope.user = userDetails;
 
- 	MenuService.getFavorite(userEntry).then(
+ 	MenuService.getFavorite(userDetails.favItem).then(
  		function(data) {
  			var foundItem = data;
 
