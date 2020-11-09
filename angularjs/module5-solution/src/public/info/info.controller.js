@@ -4,12 +4,12 @@
 angular.module('public')
 .controller('InfoController', InfoController);
 
-InfoController.$inject = ['MenuService'];
-function InfoController(MenuService) {
+InfoController.$inject = ['InfoService'];
+function InfoController(InfoService) {
 
   var $ctrl = this;
 
-
+/*
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(
  		function(data) {
@@ -20,7 +20,7 @@ function InfoController(MenuService) {
  			$ctrl.foundItem = foundItem;
 
  		})
-  }
+  }*/
 
 }
 

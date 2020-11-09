@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['MenuService'];
-function SignUpController(MenuService) {
+SignUpController.$inject = ['MenuService','InfoService'];
+function SignUpController(MenuService,InfoService) {
 
   var $ctrl = this;
 
@@ -45,7 +45,7 @@ function SignUpController(MenuService) {
   	else{
   		console.log("length is good.");
 
-  		MenuService.saveInfo($ctrl.first, $ctrl.last, $ctrl.email, $ctrl.phone, $ctrl.favItem);
+  		InfoService.saveInfo($ctrl.first, $ctrl.last, $ctrl.email, $ctrl.phone, $ctrl.favItem);
   		$ctrl.successMsg = "Your information has been saved."
   		$ctrl.InvalidMsg = "";
 
