@@ -25,7 +25,8 @@ function InfoController(InfoService) {
 
       $ctrl.Registered = true;
 
-      var $ctrl.UserInfo = {};
+      $ctrl.UserInfo = {};
+      
       $ctrl.UserInfo.first = UserInfo.first;
       $ctrl.UserInfo.last = UserInfo.last;
       $ctrl.UserInfo.email = UserInfo.email;
