@@ -11,6 +11,7 @@ function InfoController(InfoService) {
 
 
   $ctrl.UserInfo = InfoService.UserInfo();
+  console.log('$ctrl.UserInfo is: ',$ctrl.UserInfo);
 
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(

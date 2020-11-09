@@ -14,14 +14,19 @@ function InfoService($http) {
   service.saveInfo = function(FName, LName, Email, Phone, FavItem) {
     var UserInfoItem = {};
 
+    console.log("inside the saveInfo service function");
+
     UserInfoItem.first = FName;
     UserInfoItem.last = LName;
     UserInfoItem.email = Email;
     UserInfoItem.phone = Phone;
     UserInfoItem.favItem = FavItem;
 
-    service.UserInfo = UserInfoItem;
     console.log("useriteminfo is: ",UserInfoItem);
+
+    service.UserInfo = UserInfoItem;
+        console.log("service.useriteminfo is: ",service.UserInfo);
+
   }
 
 /*
