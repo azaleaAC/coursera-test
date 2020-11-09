@@ -51,7 +51,8 @@ function SignUpController($scope,MenuService,InfoService) {
   	}
   	else{
   		console.log('check 2: the value of $ctrl.user.first is :',$scope.user.first);
-  		InfoService.saveInfo($ctrl.user.first, $ctrl.user.last, $ctrl.user.email, $ctrl.user.phone, $ctrl.user.favItem);
+  		InfoService.saveInfo($ctrl.user);
+  		//InfoService.saveInfo($ctrl.user.first, $ctrl.user.last, $ctrl.user.email, $ctrl.user.phone, $ctrl.user.favItem);
   		
   		$ctrl.successMsg = "Your information has been saved."
   		$ctrl.InvalidMsg = "";
