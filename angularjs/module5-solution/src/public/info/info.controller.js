@@ -13,7 +13,7 @@ function InfoController(InfoService) {
   console.log('$ctrl.UserInfo is: ',$ctrl.UserInfo);
 
   if($ctrl.UserInfo.length === 0){
-          $ctrl.Registered = false;
+      $ctrl.Registered = false;
   }
   else{
       $ctrl.Registered = true;
