@@ -28,7 +28,7 @@ function SignUpController($scope,MenuService,InfoService) {
 	console.log('GETFAV: the value of $ctrl.user is :',userDetails);
  	/*console.log('GETFAV: the value of $ctrl.user.first is :',userDetails.first);*/
 
- 	var $scope.user = userDetails;
+ 	$scope.user = userDetails;
  	console.log("scope.user is:",$scope.user);
 
  	MenuService.getFavorite(userDetails.favItem).then(
@@ -42,7 +42,7 @@ function SignUpController($scope,MenuService,InfoService) {
   }
 
   $ctrl.Valid = function(ItemFound) {
-  	//console.log("running function invalid() with foundItem: ",ItemFound);
+  	console.log("running function invalid() with foundItem: ",ItemFound);
   		console.log('check 1: the value of $ctrl.user is :',$scope.user);
 
   	if(ItemFound.length === 0){
