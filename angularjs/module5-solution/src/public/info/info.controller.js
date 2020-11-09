@@ -46,8 +46,10 @@ function InfoController(MenuService,InfoService,ApiPath) {
       console.log("fav item is: ",$ctrl.UserInfo.favItem);
 
       var foundItem = $ctrl.getFav($ctrl.UserInfo.favItem);
-      $ctrl.foundItem = foundItem[0];
+      console.log("final found item is: ",foundItem);
       
+      $ctrl.foundItem = foundItem[0];
+
       console.log("INFOCTRL: foundItem is :",$ctrl.foundItem);
       $ctrl.basePath = ApiPath;
 
