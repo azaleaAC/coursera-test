@@ -5,8 +5,8 @@ angular.module('common')
 .service('InfoService', InfoService);
 
 
-InfoService.$inject = ['$http'];
-function InfoService($http) {
+//InfoService.$inject = ['$http'];
+function InfoService() {
 
   var service = this;
   var UserArray = [];
@@ -28,61 +28,10 @@ function InfoService($http) {
     UserArray.push(UserInfoItem);
 
     service.UserInfo = UserArray;
-        console.log("service.useriteminfo is: ",service.UserInfo);
+        console.log("service.userinfo is: ",service.UserInfo);
 
   }
 
-/*
-  service.getCategories = function () {
-    return $http.get(ApiPath + '/categories.json').then(function (response) {
-      return response.data;
-    });
-  };
-
-
-  service.getMenuItems = function (category) {
-    var config = {};
-    if (category) {
-      config.params = {'category': category};
-    }
-    console.log('looking for ',category);
-
-    return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
-      console.log(response.data);
-      return response.data;
-    });
-  };
-
-
-
-  service.getFavorite = function(entry) {
-
-    var found = [];
-
-    return $http.get(ApiPath + '/menu_items.json')
-    .then(function (response) {
-
-      var myresult = response.data.menu_items;
-      console.log('my entire result is: ',myresult);
-
-        if (entry !== ""){
-          for(var i=0; i<myresult.length; i++){
-
-            if (myresult[i].short_name === entry) {
-              console.log('this is the entry found: ',myresult[i]);
-              found.push(myresult[i]);  
-            }
-          }
-        }
-
-        //console.log('the entry being returned is ',{});
-        return found;
- 
-    }).
-    catch(function(error) {
-      console.log("Request unsuccessful");
-    });
-  };*/
 };
 
 

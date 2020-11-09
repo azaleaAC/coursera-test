@@ -23,23 +23,23 @@ function SignUpController($scope,MenuService,InfoService) {
 
 
  $ctrl.getFav = function(userEntry) {
- 	MenuService.getFavorite(userEntry).then(
- 		function(data) {
- 			var foundItem = data;
- 			//console.log("found item is ",foundItem);
 
- 			  console.log('GETFAV: the value of $ctrl.user is :',$ctrl.user);
+	console.log('GETFAV: the value of $ctrl.user is :',$ctrl.user);
+ 			console.log('GETFAV: the value of $ctrl.user.first is :',$ctrl.user.first);
 
  			$scope.user = $ctrl.user;
 
+ 	MenuService.getFavorite(userEntry).then(
+ 		function(data) {
+ 			var foundItem = data;
 
- 			$ctrl.ValidEntry = $ctrl.Valid(foundItem,$scope);
+ 			$ctrl.ValidEntry = $ctrl.Valid(foundItem);
  			console.log('value of valid entry is: ',$ctrl.ValidEntry);
 
  		})
   }
 
-  $ctrl.Valid = function(ItemFound,$scope) {
+  $ctrl.Valid = function(ItemFound) {
   	//console.log("running function invalid() with foundItem: ",ItemFound);
   		console.log('check 1: the value of $ctrl.user is :',$scope.user);
 
@@ -52,6 +52,7 @@ function SignUpController($scope,MenuService,InfoService) {
   	else{
   		console.log('check 2: the value of $ctrl.user.first is :',$scope.user.first);
   		InfoService.saveInfo($ctrl.user.first, $ctrl.user.last, $ctrl.user.email, $ctrl.user.phone, $ctrl.user.favItem);
+  		
   		$ctrl.successMsg = "Your information has been saved."
   		$ctrl.InvalidMsg = "";
 
