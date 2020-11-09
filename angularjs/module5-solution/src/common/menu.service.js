@@ -22,7 +22,6 @@ function MenuService($http, ApiPath) {
     if (category) {
       config.params = {'category': category};
     }
-    //console.log('looking for ',category);
 
     return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
       console.log(response.data);
@@ -40,19 +39,16 @@ function MenuService($http, ApiPath) {
     .then(function (response) {
 
       var myresult = response.data.menu_items;
-      //console.log('my entire result is: ',myresult);
 
         if (entry !== ""){
           for(var i=0; i<myresult.length; i++){
 
             if (myresult[i].short_name === entry) {
-              console.log('this is the entry found: ',myresult[i]);
               found.push(myresult[i]);  
             }
           }
         }
 
-        //console.log('the entry being returned is ',{});
         return found;
  
     }).

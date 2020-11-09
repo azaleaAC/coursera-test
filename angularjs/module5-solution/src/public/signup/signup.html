@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h2>Sign Up for our Newsletter3</h2>
+  <h2>Sign Up for our Newsletter4</h2>
 
 	<div>
 		<form name='SignUpForm' novalidate>
@@ -8,7 +8,7 @@
 
 			<tr>
 				<th><p><span class="details">First Name:</span></p></th>
-				<th><input type="text" name="first" placeholder="Enter your First Name" ng-model="$ctrl.user.first" required><span class="signUpError" ng-if="SignUpForm.first.$error.required && SignUpForm.first.$touched">Please enter your first name.</span></p></th>
+				<th><input type="text" name="first" placeholder="Enter your First Name" ng-model="$ctrl.user.first" required><span class="signUpError" ng-if="SignUpForm.first.$error.required && SignUpForm.first.$touched">Please enter your first name.</span></p></th>value in signupctrl.user.first is {{SignUpCtrl.user.first}}
 			</tr>
 			<tr>
 				<th><p><span class="details">Last Name:</span></p></th>
@@ -34,6 +34,9 @@
 			<p><button ng-disabled="SignUpForm.$invalid" ng-click="SignUpCtrl.getFav($ctrl.favItem);">Submit</button></p>
 
 			<p class="myMsg">{{SignUpCtrl.successMsg}}</p>
+			<p>value of signupctrl.user.first is {{SignUpCtrl.user.first}}</p>
+			<p>value of signupctrl.user is {{SignUpCtrl.user}}</p>
+
 
 		</form>
 	</div>
