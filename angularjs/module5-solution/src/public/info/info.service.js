@@ -2,12 +2,26 @@
 "use strict";
 
 angular.module('common')
-.service('MenuService', MenuService);
+.service('InfoService', InfoService);
 
 
-MenuService.$inject = ['$http', 'ApiPath'];
-function MenuService($http, ApiPath) {
+InfoService.$inject = ['$http'];
+function MenuService($http) {
+
   var service = this;
+
+
+  service.saveInfo = function(FName, LName, Email, Phone, FavItem) {
+    var UserInfoItem;
+
+    UserInfoItem.first = FName;
+    UserInfoItem.last = LName;
+    UserInfoItem.email = Email;
+    UserInfoItem.phone = Phone;
+    UserInfoItem.favItem = FavItem;
+
+    service.UserInfo = UserInfoItem;
+  }
 
 
   service.getCategories = function () {

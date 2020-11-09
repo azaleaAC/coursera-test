@@ -1,5 +1,5 @@
 <div>
-  <h2 class="text-center">My Information1</h2>
+  <h2 class="text-center">My Information2</h2>
 
 	<div>
 		<form name='InfoForm' novalidate>
@@ -30,6 +30,9 @@
 				<th>{{$ctrl.foundItem.short_name}} - {{$ctrl.foundItem.name}}</span>
 			</tr>
 			</table>
+
+			        <img class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.menuItem.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
+
 
 		</form>
 	</div>
