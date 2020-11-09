@@ -14,6 +14,7 @@ function SignUpController(MenuService,InfoService) {
   $ctrl.InvalidMsg = "";
   $ctrl.successMsg = "";
 
+  var $ctrl.user = {};
   $ctrl.user.first="";
   $ctrl.user.last="";
   $ctrl.user.email="";
