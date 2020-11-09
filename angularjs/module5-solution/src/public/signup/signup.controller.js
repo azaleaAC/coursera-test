@@ -52,8 +52,8 @@ function SignUpController(MenuService) {
   	/*var $ctrl.success = success;
   	var $ctrl.InvalidMsg = InvalidMsg;*/
 
-  		console.log("success msg: ",success);
-  		console.log("invalidmsg: ",InvalidMsg);
+  		console.log("success msg: ",$ctrl.success);
+  		console.log("invalidmsg: ",$ctrl.InvalidMsg);
   	/*	console.log("$ctrl.success: ",$ctrl.success);
   		console.log("$ctrl.InvalidMsg: ",$ctrl.InvalidMsg);*/
   		return true;
