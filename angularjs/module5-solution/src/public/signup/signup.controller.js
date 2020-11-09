@@ -31,13 +31,13 @@ function SignUpController(MenuService,InfoService,$scope) {
  			console.log("found item is ",foundItem);
 
 
- 			$ctrl.ValidEntry = $ctrl.Valid(foundItem);
+ 			$ctrl.ValidEntry = $ctrl.Valid(foundItem,$scope);
  			console.log('value of valid entry is: ',$ctrl.ValidEntry);
 
  		})
   }
 
-  $ctrl.Valid = function(ItemFound) {
+  $ctrl.Valid = function(ItemFound,$scope) {
   	//console.log("running function invalid() with foundItem: ",ItemFound);
   		console.log('check 1: the value of $ctrl.user.first is :',$scope.user.first);
 
