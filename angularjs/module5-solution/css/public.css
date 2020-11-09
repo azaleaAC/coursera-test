@@ -117,6 +117,12 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+.signUpError {
+  font-size: 75%;
+  font-style: italic;
+}
+
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
