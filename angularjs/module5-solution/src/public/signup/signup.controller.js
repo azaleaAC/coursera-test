@@ -39,7 +39,7 @@ function SignUpController(MenuService,InfoService,$scope) {
 
   $ctrl.Valid = function(ItemFound,$scope) {
   	//console.log("running function invalid() with foundItem: ",ItemFound);
-  		console.log('check 1: the value of $ctrl.user.first is :',$scope.user.first);
+  		console.log('check 1: the value of $ctrl.user.first is :',$scope.user);
 
   	if(ItemFound.length === 0){
 		$ctrl.InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
