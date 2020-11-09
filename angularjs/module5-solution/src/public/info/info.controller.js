@@ -36,11 +36,16 @@ function InfoController(InfoService,ApiPath) {
 
   console.log("fav item is: ",$ctrl.UserInfo.favItem);
 
+    $ctrl.foundItem = $ctrl.getFav($ctrl.UserInfo.favItem);
+
   }
   console.log("Registered?:", $ctrl.Registered);
 
   console.log("Apipath is: ",ApiPath);
   $ctrl.basePath = ApiPath;
+
+
+
 
  $ctrl.getFav = function(userEntry) {
  	MenuService.getFavorite(userEntry).then(
@@ -48,8 +53,8 @@ function InfoController(InfoService,ApiPath) {
  			var foundItem = data;
  			console.log("found item is ",foundItem);
 
-
- 			$ctrl.foundItem = foundItem;
+      return foundItem;
+ 			//$ctrl.foundItem = foundItem;
 
  		})
   }
