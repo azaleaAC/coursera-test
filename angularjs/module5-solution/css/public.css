@@ -133,10 +133,11 @@ button {
 .myMsg {
   text-align: center;
   font-size: 125%;
+  margin: 20px 0px;
 }
 
 form {
-  margin: 25px;
+  margin: 50px;
 }
 
 /********** Large devices only **********/
