@@ -45,7 +45,7 @@ function SignUpController($scope,MenuService,InfoService) {
   		console.log('check 1: the value of $ctrl.user is :',$scope.user);
 
   	if(ItemFound.length === 0){
-		$ctrl.InvalidMsg = "Please enter a valid Short Name for the your favorite dish.";
+		$ctrl.InvalidMsg = "No such menu number exists.";
   		return false;
  
 
