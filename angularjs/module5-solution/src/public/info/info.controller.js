@@ -19,7 +19,6 @@ function InfoController(MenuService,InfoService,ApiPath) {
       var foundItem = data;
       console.log("found item is ",foundItem);
 
-      //return foundItem;
       $ctrl.foundItem = foundItem[0];
 
     })
