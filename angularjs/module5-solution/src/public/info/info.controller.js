@@ -12,14 +12,15 @@ function InfoController(MenuService,InfoService,ApiPath) {
 
  $ctrl.getFav = function(userEntry) {
   
-  console.log('value of userEntry: ',userEntry)
+  console.log('value of userEntry: ',userEntry);
+
     MenuService.getFavorite(userEntry).then(
     function(data) {
       var foundItem = data;
       console.log("found item is ",foundItem);
 
-      return foundItem;
-      //$ctrl.foundItem = foundItem;
+      //return foundItem;
+      $ctrl.foundItem = foundItem[0];
 
     })
   };
@@ -46,12 +47,13 @@ function InfoController(MenuService,InfoService,ApiPath) {
 
       console.log("fav item is: ",$ctrl.UserInfo.favItem);
 
-      var found = $ctrl.getFav($ctrl.UserInfo.favItem);
-      console.log("final found item is: ",found);
+      $ctrl.getFav($ctrl.UserInfo.favItem);
 
-      $ctrl.foundItem = found[0];
+      console.log("final found item is: ", $ctrl.foundItem);
 
-      console.log("INFOCTRL: foundItem is :",$ctrl.foundItem);
+     // $ctrl.foundItem = $ctrl.foundItem[0];
+
+      //console.log("INFOCTRL: foundItem is :",$ctrl.foundItem);
       $ctrl.basePath = ApiPath;
 
   }
