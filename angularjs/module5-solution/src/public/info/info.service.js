@@ -10,7 +10,7 @@ function InfoService() {
   var service = this;
   var UserArray = [];
 
-  service.UserInfo = UserArray;
+  service.UserInfo.length = 0;
 
 
 
