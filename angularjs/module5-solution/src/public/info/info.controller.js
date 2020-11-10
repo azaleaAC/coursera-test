@@ -12,12 +12,9 @@ function InfoController(MenuService,InfoService,ApiPath) {
 
  $ctrl.getFav = function(userEntry) {
   
-  console.log('value of userEntry: ',userEntry);
-
     MenuService.getFavorite(userEntry).then(
     function(data) {
       var foundItem = data;
-      console.log("found item is ",foundItem);
 
       $ctrl.foundItem = foundItem[0];
 
@@ -27,12 +24,9 @@ function InfoController(MenuService,InfoService,ApiPath) {
 
   var UserInfo = InfoService.UserInfo;
 
-  console.log('userinfo length b4 is: ', UserInfo.length)
   if(UserInfo.length > 1){
     UserInfo.splice(0, 1);
   }
-  console.log("userinfo length after is: ",UserInfo.length)
-
 
   if(UserInfo.length === 0){
       $ctrl.Registered = false;
@@ -40,8 +34,6 @@ function InfoController(MenuService,InfoService,ApiPath) {
   else{
 
       $ctrl.Registered = true;
-
-      console.log("user info first is ",UserInfo[0].first);
 
       $ctrl.UserInfo = {};
 
@@ -51,15 +43,8 @@ function InfoController(MenuService,InfoService,ApiPath) {
       $ctrl.UserInfo.phone = UserInfo[0].phone;
       $ctrl.UserInfo.favItem = UserInfo[0].favItem;
 
-      console.log("fav item is: ",$ctrl.UserInfo.favItem);
-
       $ctrl.getFav($ctrl.UserInfo.favItem);
-
-      console.log("final found item is: ", $ctrl.foundItem);
-
-     // $ctrl.foundItem = $ctrl.foundItem[0];
-
-      //console.log("INFOCTRL: foundItem is :",$ctrl.foundItem);
+    
       $ctrl.basePath = ApiPath;
 
   }
