@@ -27,6 +27,13 @@ function InfoController(MenuService,InfoService,ApiPath) {
 
   var UserInfo = InfoService.UserInfo;
 
+  console.log('userinfo length b4 is: ', UserInfo.length)
+  if(UserInfo.length > 1){
+    UserInfo.splice(0, 1);
+  }
+  console.log("userinfo length after is: ",UserInfo.length)
+
+
   if(UserInfo.length === 0){
       $ctrl.Registered = false;
   }
