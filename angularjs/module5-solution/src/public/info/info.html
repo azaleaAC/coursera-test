@@ -1,5 +1,5 @@
 <div>
-  <h2 class="text-center">My Information1</h2>
+  <h2 class="text-center">My Information2</h2>
 
 	<div>
 		<table ng-if="InfoCtrl.Registered">
@@ -22,11 +22,14 @@
 			</tr>
 		</table>
 
-		<p><span>My favourite dish is: {{InfoCtrl.foundItem.short_name}} - {{InfoCtrl.foundItem.name}}</span>
-			
+		<div ng-if="InfoCtrl.Registered">
+			<p>My favourite dish is: {{InfoCtrl.foundItem.short_name}} - {{InfoCtrl.foundItem.name}}</p>
+				
 
-		<img ng-if="InfoCtrl.Registered" class="img-responsive" width="250" height="150" ng-src="{{InfoCtrl.basePath}}/images/{{InfoCtrl.foundItem.short_name}}.jpg" alt="{{InfoCtrl.foundItem.name}}">
+			<img class="img-responsive" width="250" height="150" ng-src="{{InfoCtrl.basePath}}/images/{{InfoCtrl.foundItem.short_name}}.jpg" alt="{{InfoCtrl.foundItem.name}}">
+		</div>
 
-			<p class="myMsg" ng-if="!(InfoCtrl.Registered)">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
+		<p class="myMsg" ng-if="!(InfoCtrl.Registered)">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
+
 	</div>
 </div>
