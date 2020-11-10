@@ -9,11 +9,10 @@ function InfoService() {
 
   var service = this;
   
-  var UserArray;
-  UserArray.length = 0;
+  //var UserArray;
+  //UserArray.length = 0;
 
   service.UserInfo.length = 0;
-
 
 
   service.saveInfo = function(UserInfo) {
@@ -25,9 +24,9 @@ function InfoService() {
 
     console.log("INFOSERVICE: useriteminfo is: ",UserInfoItem);
 
-    UserArray.push(UserInfoItem);
+    service.UserInfo.push(UserInfoItem);
 
-    service.UserInfo = UserArray;
+    //service.UserInfo = UserArray;
         console.log("INFOSERVICE: service.userinfo is: ",service.UserInfo);
 
   }
